@@ -940,7 +940,7 @@
           <button class="kds-fab kds-fab--sm" aria-label="Adicionar">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <span class="ds-fab-demo__label">Small · 40px</span>
+          <span class="ds-fab-demo__label">Small · 56px</span>
         </div>
         <div class="ds-fab-demo">
           <button class="kds-fab" aria-label="Adicionar">
@@ -982,9 +982,9 @@
       <table class="ds-table">
         <thead><tr><th>Variante</th><th>Tamanho</th><th>Border Radius</th><th>Flutter</th></tr></thead>
         <tbody>
-          <tr><td>Small FAB</td><td>40×40px</td><td>50%</td><td><code>FloatingActionButton.small</code></td></tr>
+          <tr><td>Small FAB</td><td>56×56px</td><td>50%</td><td><code>FloatingActionButton.small</code></td></tr>
           <tr><td>FAB</td><td>70×70px</td><td>50%</td><td><code>FloatingActionButton</code></td></tr>
-          <tr><td>Extended FAB</td><td>56px altura</td><td>30px (pill)</td><td><code>FloatingActionButton.extended</code></td></tr>
+          <tr><td>Extended FAB</td><td>70px altura</td><td>30px (pill)</td><td><code>FloatingActionButton.extended</code></td></tr>
         </tbody>
       </table>
     </div>
@@ -1031,74 +1031,335 @@
        COMPONENTE: INPUTS
   ─────────────────────────────────────────── -->
   <section id="page-comp-inputs" class="ds-page">
-    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Componentes › <strong>Inputs</strong></nav>
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Componentes › <strong>Inputs &amp; Formulários</strong></nav>
     <div class="ds-page-hero">
       <p class="ds-page-hero__eyebrow">Componentes</p>
       <h1 class="ds-page-hero__title">Inputs &amp; Formulários</h1>
-      <p class="ds-page-hero__subtitle">Campos de texto, labels e mensagens de validação para formulários de crédito e cadastro.</p>
+      <p class="ds-page-hero__subtitle">Campo de entrada de texto com suporte a estados, ícones e validação. 60 variantes no Figma cobrindo style, state, ícones e supporting text.</p>
     </div>
 
+    <!-- Visão Geral -->
     <div class="ds-section">
-      <h2 class="ds-section__title">Estados</h2>
-      <div class="ds-component-preview" style="flex-direction:column;align-items:stretch;max-width:400px;margin:0 auto 8px;">
-        <div class="kds-input-group">
-          <label class="kds-label kds-label--required">CPF</label>
-          <input class="kds-input" type="text" placeholder="000.000.000-00" />
-          <span class="kds-helper">Apenas números, sem pontuação</span>
+      <h2 class="ds-section__title">Visão Geral</h2>
+      <div class="ds-dodont">
+        <div class="ds-dodont__card ds-dodont__card--do">
+          <div class="ds-dodont__header">✅ Usar quando</div>
+          <div class="ds-dodont__body">
+            <ul style="padding-left:16px;line-height:2">
+              <li>Qualquer entrada de texto do usuário (nome, CPF, valor)</li>
+              <li>Campos de formulário em fluxos de contratação e cadastro</li>
+            </ul>
+          </div>
         </div>
-        <div class="kds-input-group">
-          <label class="kds-label">Valor desejado</label>
-          <input class="kds-input" type="text" value="R$ 5.000,00" />
-        </div>
-        <div class="kds-input-group">
-          <label class="kds-label">Matrícula</label>
-          <input class="kds-input error" type="text" value="123" />
-          <span class="kds-helper error">⚠ Matrícula não encontrada</span>
-        </div>
-        <div class="kds-input-group">
-          <label class="kds-label">Órgão (desabilitado)</label>
-          <input class="kds-input" type="text" value="INSS" disabled />
+        <div class="ds-dodont__card ds-dodont__card--dont">
+          <div class="ds-dodont__header">⚠️ Evitar</div>
+          <div class="ds-dodont__body">
+            <ul style="padding-left:16px;line-height:2">
+              <li>Seleção de opções → use Dropdown, Radio ou Chips</li>
+              <li>Entrada numérica de faixa → use Slider</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- Estados -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Estados</h2>
+      <div class="ds-component-preview" style="flex-wrap:wrap;gap:20px;align-items:flex-start;justify-content:center;">
+
+        <!-- Enabled -->
+        <div style="width:220px;">
+          <p style="font-size:0.72rem;font-weight:600;color:var(--color-subtitle-gray);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Enabled</p>
+          <div class="kds-field">
+            <div class="kds-field__inner">
+              <input class="kds-field__input" type="text" placeholder=" " />
+              <label class="kds-field__label">CPF</label>
+            </div>
+            <span class="kds-field__support">Apenas números, sem pontuação</span>
+          </div>
+        </div>
+
+        <!-- Focused -->
+        <div style="width:220px;">
+          <p style="font-size:0.72rem;font-weight:600;color:var(--color-subtitle-gray);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Focused</p>
+          <div class="kds-field kds-field--focused kds-field--filled">
+            <div class="kds-field__inner">
+              <input class="kds-field__input" type="text" placeholder=" " value="000.000.000-00" />
+              <label class="kds-field__label">CPF</label>
+            </div>
+            <span class="kds-field__support">Apenas números, sem pontuação</span>
+          </div>
+        </div>
+
+        <!-- Hovered -->
+        <div style="width:220px;">
+          <p style="font-size:0.72rem;font-weight:600;color:var(--color-subtitle-gray);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Hovered</p>
+          <div class="kds-field kds-field--hovered kds-field--filled">
+            <div class="kds-field__inner">
+              <input class="kds-field__input" type="text" placeholder=" " value="R$ 5.000,00" />
+              <label class="kds-field__label">Valor desejado</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error -->
+        <div style="width:220px;">
+          <p style="font-size:0.72rem;font-weight:600;color:var(--color-subtitle-gray);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Error</p>
+          <div class="kds-field kds-field--error kds-field--filled">
+            <div class="kds-field__inner">
+              <input class="kds-field__input kds-field__input--error" type="text" placeholder=" " value="123" />
+              <label class="kds-field__label">Matrícula</label>
+              <span class="kds-field__icon kds-field__icon--trail">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </span>
+            </div>
+            <span class="kds-field__support">Matrícula não encontrada. Verifique e tente novamente.</span>
+          </div>
+        </div>
+
+        <!-- Disabled -->
+        <div style="width:220px;">
+          <p style="font-size:0.72rem;font-weight:600;color:var(--color-subtitle-gray);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Disabled</p>
+          <div class="kds-field kds-field--disabled kds-field--filled">
+            <div class="kds-field__inner">
+              <input class="kds-field__input" type="text" placeholder=" " value="INSS" disabled />
+              <label class="kds-field__label">Órgão</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Variantes com ícone -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Variantes com Ícone</h2>
+      <p class="ds-section__subtitle">Leading icon sinaliza o tipo do campo. Trailing icon pode ser interativo (limpar, mostrar senha, validação).</p>
+      <div class="ds-component-preview" style="flex-wrap:wrap;gap:20px;align-items:flex-start;justify-content:center;">
+
+        <!-- Sem ícone -->
+        <div style="width:220px;">
+          <p style="font-size:0.72rem;font-weight:600;color:var(--color-subtitle-gray);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Sem ícone</p>
+          <div class="kds-field kds-field--filled">
+            <div class="kds-field__inner">
+              <input class="kds-field__input" type="text" placeholder=" " value="João Silva" />
+              <label class="kds-field__label">Nome</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leading icon -->
+        <div style="width:220px;">
+          <p style="font-size:0.72rem;font-weight:600;color:var(--color-subtitle-gray);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Leading icon</p>
+          <div class="kds-field kds-field--filled">
+            <div class="kds-field__inner">
+              <span class="kds-field__icon kds-field__icon--lead">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </span>
+              <input class="kds-field__input kds-field__input--with-lead" type="text" placeholder=" " value="10/04/1990" />
+              <label class="kds-field__label" style="left:44px">Data de nascimento</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trailing icon -->
+        <div style="width:220px;">
+          <p style="font-size:0.72rem;font-weight:600;color:var(--color-subtitle-gray);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Trailing icon</p>
+          <div class="kds-field kds-field--filled">
+            <div class="kds-field__inner">
+              <input class="kds-field__input kds-field__input--with-trail" type="password" placeholder=" " value="senha123" />
+              <label class="kds-field__label">Senha</label>
+              <span class="kds-field__icon kds-field__icon--trail" style="pointer-events:all;cursor:pointer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ambos -->
+        <div style="width:220px;">
+          <p style="font-size:0.72rem;font-weight:600;color:var(--color-subtitle-gray);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Leading + Trailing</p>
+          <div class="kds-field kds-field--filled">
+            <div class="kds-field__inner">
+              <span class="kds-field__icon kds-field__icon--lead">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </span>
+              <input class="kds-field__input kds-field__input--with-lead kds-field__input--with-trail" type="text" placeholder=" " value="Buscar banco" />
+              <label class="kds-field__label" style="left:44px">Banco</label>
+              <span class="kds-field__icon kds-field__icon--trail" style="pointer-events:all;cursor:pointer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Anatomia -->
     <div class="ds-section">
       <h2 class="ds-section__title">Anatomia</h2>
       <table class="ds-table">
-        <thead><tr><th>Elemento</th><th>Token</th><th>Estado</th></tr></thead>
+        <thead><tr><th>#</th><th>Elemento</th><th>Token de cor</th><th>Descrição</th></tr></thead>
         <tbody>
-          <tr><td>Border padrão</td><td><code>AppColors.defaultGray (#CECFCD)</code></td><td>Default</td></tr>
-          <tr><td>Border focus</td><td><code>AppColors.primary (#0A9F82)</code></td><td>Focus</td></tr>
-          <tr><td>Border error</td><td><code>AppColors.sysError (#FF6060)</code></td><td>Error</td></tr>
-          <tr><td>Background padrão</td><td><code>Colors.white</code></td><td>Default</td></tr>
-          <tr><td>Background disabled</td><td><code>AppColors.defaultWhite (#E8E8E8)</code></td><td>Disabled</td></tr>
-          <tr><td>Texto label</td><td><code>AppColors.darkGray</code> · TitleSmall</td><td>—</td></tr>
-          <tr><td>Texto helper</td><td><code>AppColors.subtitleGray</code> · BodySmall</td><td>Default</td></tr>
-          <tr><td>Texto helper error</td><td><code>AppColors.sysError2</code> · BodySmall</td><td>Error</td></tr>
+          <tr><td>01</td><td>Container</td><td><code>border/default</code> → <code>brand/primary</code> → <code>feedback/error</code></td><td>Borda 1dp (2dp em focus/error). Border radius 8dp. Altura 56dp.</td></tr>
+          <tr><td>02</td><td>Label / Placeholder</td><td><code>text/secondary #5E6772</code></td><td>Inter Regular 14sp. Flutua para 12sp ao focar ou preencher.</td></tr>
+          <tr><td>03</td><td>Input text</td><td><code>text/primary #141514</code></td><td>Inter Regular 16sp. Texto inserido pelo usuário.</td></tr>
+          <tr><td>04</td><td>Leading icon (opcional)</td><td><code>text/secondary</code></td><td>20dp à esquerda. Sinaliza tipo de campo (busca, CPF, data).</td></tr>
+          <tr><td>05</td><td>Trailing icon (opcional)</td><td><code>brand/primary</code> ou <code>text/secondary</code></td><td>20dp à direita. Pode ser interativo (limpar, ver senha, validação).</td></tr>
+          <tr><td>06</td><td>Supporting text</td><td><code>text/secondary</code> → <code>feedback/error</code></td><td>Inter Regular 12sp. Instrução ou mensagem de erro abaixo do campo.</td></tr>
         </tbody>
       </table>
     </div>
 
+    <!-- Especificações -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Especificações</h2>
+      <table class="ds-table">
+        <thead><tr><th>Propriedade</th><th>Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Altura do campo</td><td>56dp</td></tr>
+          <tr><td>Border radius</td><td>8dp</td></tr>
+          <tr><td>Border width padrão</td><td>1dp</td></tr>
+          <tr><td>Border width focus / error</td><td>2dp</td></tr>
+          <tr><td>Label size</td><td>14sp → compacta para 12sp ao flutuar</td></tr>
+          <tr><td>Input text size</td><td>16sp</td></tr>
+          <tr><td>Supporting text size</td><td>12sp</td></tr>
+          <tr><td>Leading / Trailing icon</td><td>20dp</td></tr>
+          <tr><td>Padding interno</td><td>16dp lateral · 8dp vertical</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Formulários -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Formulários</h2>
+      <p class="ds-section__subtitle">Padrões de composição usados nos fluxos do app.</p>
+
+      <h3 class="ds-subsection__title">Login</h3>
+      <div class="ds-component-preview" style="flex-direction:column;align-items:stretch;max-width:360px;margin:0 auto var(--spacing-md);">
+        <div class="kds-form-group">
+          <div class="kds-field kds-field--filled">
+            <div class="kds-field__inner">
+              <input class="kds-field__input" type="text" placeholder=" " value="joao@email.com" />
+              <label class="kds-field__label">E-mail</label>
+            </div>
+          </div>
+          <div class="kds-field kds-field--filled">
+            <div class="kds-field__inner">
+              <input class="kds-field__input kds-field__input--with-trail" type="password" placeholder=" " value="••••••••" />
+              <label class="kds-field__label">Senha</label>
+              <span class="kds-field__icon kds-field__icon--trail" style="pointer-events:all;cursor:pointer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="ds-subsection__title">Endereço</h3>
+      <div class="ds-component-preview" style="flex-direction:column;align-items:stretch;max-width:360px;margin:0 auto var(--spacing-md);">
+        <div class="kds-form-group">
+          <div class="kds-field kds-field--filled">
+            <div class="kds-field__inner"><input class="kds-field__input" type="text" placeholder=" " value="01310-100" /><label class="kds-field__label">CEP</label></div>
+          </div>
+          <div class="kds-field kds-field--filled">
+            <div class="kds-field__inner"><input class="kds-field__input" type="text" placeholder=" " value="Av. Paulista" /><label class="kds-field__label">Logradouro</label></div>
+          </div>
+          <div class="kds-field kds-field--filled">
+            <div class="kds-field__inner"><input class="kds-field__input" type="text" placeholder=" " value="Bela Vista" /><label class="kds-field__label">Bairro</label></div>
+          </div>
+          <div class="kds-field kds-field--filled">
+            <div class="kds-field__inner"><input class="kds-field__input" type="text" placeholder=" " value="São Paulo — SP" /><label class="kds-field__label">Cidade / Estado</label></div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="ds-subsection__title">Cadastro</h3>
+      <div class="ds-component-preview" style="flex-direction:column;align-items:stretch;max-width:360px;margin:0 auto var(--spacing-md);">
+        <div class="kds-form-group">
+          <div class="kds-field kds-field--filled">
+            <div class="kds-field__inner"><input class="kds-field__input" type="text" placeholder=" " value="João da Silva" /><label class="kds-field__label">Nome completo</label></div>
+          </div>
+          <div class="kds-field kds-field--filled">
+            <div class="kds-field__inner"><input class="kds-field__input" type="text" placeholder=" " value="000.000.000-00" /><label class="kds-field__label">CPF</label></div>
+          </div>
+          <div class="kds-field kds-field--filled">
+            <div class="kds-field__inner"><input class="kds-field__input" type="text" placeholder=" " value="(11) 99999-9999" /><label class="kds-field__label">Celular</label></div>
+          </div>
+          <div class="kds-field kds-field--filled">
+            <div class="kds-field__inner"><input class="kds-field__input" type="text" placeholder=" " value="joao@email.com" /><label class="kds-field__label">E-mail</label></div>
+          </div>
+          <p style="font-size:0.75rem;color:var(--color-subtitle-gray);text-align:center;padding:4px 16px">Ao criar sua conta, você concorda com nossos <strong>Termos de Serviço</strong> e <strong>Política de Privacidade.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tom de Voz -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Tom de Voz</h2>
+      <p class="ds-section__subtitle">Labels descrevem o dado esperado. Supporting text de erro é direto e orientado à correção.</p>
+      <div class="ds-dodont">
+        <div class="ds-dodont__card ds-dodont__card--do">
+          <div class="ds-dodont__header">✓ Correto</div>
+          <div class="ds-dodont__body">
+            <code>"CPF"</code><br>
+            <code>"Valor do saque"</code><br>
+            <code>"Banco"</code>
+          </div>
+        </div>
+        <div class="ds-dodont__card ds-dodont__card--dont">
+          <div class="ds-dodont__header">✗ Evitar</div>
+          <div class="ds-dodont__body"><code>"Insira aqui o seu número de CPF sem pontos e traços"</code></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Acessibilidade -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Acessibilidade</h2>
+      <div class="ds-alert ds-alert--info">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Label sempre visível.</strong> Não usar apenas placeholder — a label flutuante garante contexto mesmo após o preenchimento.</div>
+      </div>
+      <div class="ds-alert ds-alert--error" style="margin-top:8px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Error state.</strong> Sempre use ícone + texto de erro. Nunca comunique erro apenas via cor.</div>
+      </div>
+    </div>
+
+    <!-- Flutter -->
     <div class="ds-section">
       <h2 class="ds-section__title">Código Flutter</h2>
       <div class="ds-code-block">
         <span class="ds-code-block__lang">DART</span>
         <span class="cls">TextFormField</span>(<br>
+        &nbsp;&nbsp;<span class="kw">autovalidateMode</span>: AutovalidateMode.onUserInteraction,<br>
+        &nbsp;&nbsp;<span class="kw">validator</span>: (v) => v!.isEmpty ? <span class="str">'Campo obrigatório'</span> : <span class="kw">null</span>,<br>
         &nbsp;&nbsp;<span class="kw">decoration</span>: InputDecoration(<br>
         &nbsp;&nbsp;&nbsp;&nbsp;labelText: <span class="str">'CPF'</span>,<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;hintText: <span class="str">'000.000.000-00'</span>,<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;helperText: <span class="str">'Apenas números'</span>,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;helperText: <span class="str">'Apenas números, sem pontuação'</span>,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;prefixIcon: Icon(Icons.badge_outlined, size: <span class="num">20</span>),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;suffixIcon: Icon(Icons.close, size: <span class="num">20</span>),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="cmt">// Border padrão — 1dp cinza</span><br>
         &nbsp;&nbsp;&nbsp;&nbsp;border: OutlineInputBorder(<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius: BorderRadius.circular(AppSpacing.borderRadius),<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderSide: <span class="kw">const</span> BorderSide(color: AppColors.defaultGray),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius: BorderRadius.circular(<span class="num">8</span>),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderSide: BorderSide(color: AppColors.defaultGray),<br>
         &nbsp;&nbsp;&nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="cmt">// Focus — 2dp verde</span><br>
         &nbsp;&nbsp;&nbsp;&nbsp;focusedBorder: OutlineInputBorder(<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius: BorderRadius.circular(AppSpacing.borderRadius),<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderSide: <span class="kw">const</span> BorderSide(color: AppColors.primary, width: <span class="num">2</span>),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius: BorderRadius.circular(<span class="num">8</span>),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderSide: BorderSide(color: AppColors.primary, width: <span class="num">2</span>),<br>
         &nbsp;&nbsp;&nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="cmt">// Error — 2dp vermelho</span><br>
         &nbsp;&nbsp;&nbsp;&nbsp;errorBorder: OutlineInputBorder(<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius: BorderRadius.circular(AppSpacing.borderRadius),<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderSide: <span class="kw">const</span> BorderSide(color: AppColors.sysError),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius: BorderRadius.circular(<span class="num">8</span>),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderSide: BorderSide(color: AppColors.sysError, width: <span class="num">2</span>),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;focusedErrorBorder: OutlineInputBorder(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius: BorderRadius.circular(<span class="num">8</span>),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderSide: BorderSide(color: AppColors.sysError, width: <span class="num">2</span>),<br>
         &nbsp;&nbsp;&nbsp;&nbsp;),<br>
         &nbsp;&nbsp;),<br>
         )
@@ -1865,6 +2126,12 @@
       </div>
     </div>
   </section>
+
+  <footer class="ds-footer">
+    <span>© 2026 Konsi — Todos os direitos reservados</span>
+    <span class="ds-footer__divider">·</span>
+    <span>Feito com carinho pelo time de UX Design</span>
+  </footer>
 
 </main>
 
