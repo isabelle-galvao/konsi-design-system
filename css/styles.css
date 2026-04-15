@@ -1376,54 +1376,66 @@ body {
 /* ══════════════════════════════════════════
    BRAND SECTION
 ══════════════════════════════════════════ */
+.ds-subsection__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-dark-gray);
+  margin: var(--spacing-md) 0 var(--spacing-sm);
+}
+
 .ds-logo-showcase {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
 }
+.ds-logo-showcase--icons    { grid-template-columns: repeat(5, 1fr); }
+.ds-logo-showcase--wordmarks { grid-template-columns: repeat(2, 1fr); }
 
 .ds-logo-tile {
   border-radius: 12px;
-  padding: 36px 24px;
+  padding: 32px 20px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  min-height: 140px;
+  gap: 10px;
+  min-height: 160px;
   border: 1px solid var(--color-default-gray);
 }
 
-.ds-logo-tile--light { background: var(--color-white); }
-.ds-logo-tile--green { background: var(--color-primary); }
-.ds-logo-tile--dark  { background: var(--color-primary-darker); }
-
-.ds-logo-mark {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  font-weight: 900;
-  font-family: var(--font-family);
+.ds-logo-tile--light       { background: var(--color-white); }
+.ds-logo-tile--dark        { background: var(--color-primary-darker); }
+.ds-logo-tile--checkered   {
+  background-color: #e0e0e0;
+  background-image:
+    linear-gradient(45deg, #bbb 25%, transparent 25%),
+    linear-gradient(-45deg, #bbb 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #bbb 75%),
+    linear-gradient(-45deg, transparent 75%, #bbb 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
 }
 
-.ds-logo-mark--primary { background: var(--color-primary); color: white; }
-.ds-logo-mark--white   { background: white; color: var(--color-primary); }
-.ds-logo-mark--vivid   { background: var(--gk-300); color: var(--color-primary-darker); }
+.ds-logo-asset--icon     { width: 80px; height: 80px; border-radius: 18px; display: block; }
+.ds-logo-asset--wordmark { width: 100%; max-width: 280px; height: auto; display: block; }
 
 .ds-logo-tile__label {
   font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
+}
+.ds-logo-tile__file {
+  font-size: 0.68rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(0,0,0,0.05);
+  color: var(--color-subtitle-gray);
 }
 
-.ds-logo-tile--light .ds-logo-tile__label { color: var(--color-subtitle-gray); }
-.ds-logo-tile--green .ds-logo-tile__label { color: rgba(255,255,255,0.8); }
-.ds-logo-tile--dark  .ds-logo-tile__label { color: rgba(255,255,255,0.6); }
+.ds-logo-tile--light .ds-logo-tile__label       { color: var(--color-subtitle-gray); }
+.ds-logo-tile--dark  .ds-logo-tile__label       { color: rgba(255,255,255,0.8); }
+.ds-logo-tile--checkered .ds-logo-tile__label   { color: var(--color-subtitle-gray); }
+.ds-logo-tile--dark .ds-logo-tile__file         { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
 
 /* Do/Don't grid */
 .ds-dodont-brand {
