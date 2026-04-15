@@ -1,0 +1,11 @@
+{
+  "name": "konsi-design-system",
+  "version": "2.0.0",
+  "description": "Konsi Design System — documentação estática com tokens, componentes e padrões Flutter",
+  "scripts": {
+    "start": "npx serve . -p 4200",
+    "dev": "npx serve . -p 4200 --no-clipboard"
+  },
+  "keywords": ["design-system", "konsi", "flutter"],
+  "author": "Konsi"
+}

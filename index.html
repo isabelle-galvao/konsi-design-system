@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konsi Design System</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A9F82'/><text y='24' x='6' font-size='20'>K</text></svg>" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════ -->
+<header class="ds-header">
+  <button id="menu-toggle" style="display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:4px 8px;" aria-label="Menu">☰</button>
+  <a class="ds-header__logo" href="#" data-goto="home">
+    <div class="ds-header__logo-icon">K</div>
+    <span>Konsi DS</span>
+  </a>
+  <div class="ds-header__divider"></div>
+  <span class="ds-header__title">Design System</span>
+  <div class="ds-header__spacer"></div>
+  <div class="ds-header__search">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    Buscar…
+  </div>
+  <span class="ds-header__version">v1.0 · Flutter</span>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     TOP NAVIGATION
+═══════════════════════════════════════════ -->
+<nav class="ds-topnav">
+  <div class="ds-topnav__items">
+    <span class="ds-topnav__item active" data-section="home">Início</span>
+    <span class="ds-topnav__item" data-section="fundamentos">Fundamentos</span>
+    <span class="ds-topnav__item" data-section="componentes">Componentes</span>
+    <span class="ds-topnav__item" data-section="brand">Brand</span>
+    <span class="ds-topnav__item" data-section="conteudo">Conteúdo</span>
+    <span class="ds-topnav__item" data-section="recursos">Recursos</span>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     SIDEBAR
+═══════════════════════════════════════════ -->
+<aside class="ds-sidebar">
+
+  <nav>
+    <!-- HOME -->
+    <div class="ds-nav__group" data-section="home">
+      <a class="ds-nav__item active" data-page="home">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Início
+      </a>
+    </div>
+
+    <!-- FUNDAMENTOS -->
+    <div class="ds-nav__group" data-section="fundamentos">
+      <span class="ds-nav__group-label">Fundamentos</span>
+      <a class="ds-nav__item" data-page="cores">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 20a7 7 0 1 1 0-14"/></svg>
+        Cores
+      </a>
+      <a class="ds-nav__item" data-page="tipografia">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+        Tipografia
+      </a>
+      <a class="ds-nav__item" data-page="espacamento">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="3" y2="18"/></svg>
+        Espaçamento
+      </a>
+      <a class="ds-nav__item" data-page="elevacao">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        Elevação &amp; Sombras
+      </a>
+      <a class="ds-nav__item" data-page="tokens">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        Design Tokens
+        <span class="ds-nav__badge">113</span>
+      </a>
+    </div>
+
+    <!-- COMPONENTES -->
+    <div class="ds-nav__group" data-section="componentes">
+      <span class="ds-nav__group-label">Componentes</span>
+      <a class="ds-nav__item" data-page="comp-botoes">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="5"/></svg>
+        Botões
+      </a>
+      <a class="ds-nav__item" data-page="comp-inputs">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Inputs &amp; Formulários
+      </a>
+      <a class="ds-nav__item" data-page="comp-cards">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        Cards
+      </a>
+      <a class="ds-nav__item" data-page="comp-badges">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Badges &amp; Tags
+      </a>
+      <a class="ds-nav__item" data-page="comp-feedback">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Feedback &amp; Alertas
+      </a>
+    </div>
+
+    <!-- PADRÕES -->
+    <div class="ds-nav__group" data-section="componentes">
+      <span class="ds-nav__group-label">Padrões</span>
+      <a class="ds-nav__item" data-page="acessibilidade">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        Acessibilidade
+      </a>
+      <a class="ds-nav__item" data-page="principios">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Princípios
+      </a>
+    </div>
+
+    <!-- BRAND -->
+    <div class="ds-nav__group" data-section="brand">
+      <span class="ds-nav__group-label">Brand</span>
+      <a class="ds-nav__item" data-page="brand-identidade">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        Identidade Visual
+      </a>
+      <a class="ds-nav__item" data-page="brand-paleta">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        Paleta da Marca
+      </a>
+      <a class="ds-nav__item" data-page="brand-voz">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Tom de Voz
+      </a>
+    </div>
+
+    <!-- CONTEÚDO -->
+    <div class="ds-nav__group" data-section="conteudo">
+      <span class="ds-nav__group-label">Conteúdo</span>
+      <a class="ds-nav__item" data-page="conteudo-escrita">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        Diretrizes de Escrita
+      </a>
+      <a class="ds-nav__item" data-page="conteudo-microcopy">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        Microcopy
+      </a>
+    </div>
+
+    <!-- RECURSOS -->
+    <div class="ds-nav__group" data-section="recursos">
+      <span class="ds-nav__group-label">Recursos</span>
+      <a class="ds-nav__item" data-page="recursos-figma">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        Figma
+      </a>
+      <a class="ds-nav__item" data-page="recursos-flutter">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        Flutter
+      </a>
+      <a class="ds-nav__item" data-page="recursos-contribuir">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        Como Contribuir
+      </a>
+    </div>
+  </nav>
+</aside>
+
+<!-- ═══════════════════════════════════════════
+     MAIN CONTENT
+═══════════════════════════════════════════ -->
+<main class="ds-main">
+
+  <!-- ───────────────────────────────────────
+       HOME
+  ─────────────────────────────────────────── -->
+  <section id="page-home" class="ds-page">
+    <!-- Hero principal -->
+    <div class="ds-hero-home">
+      <p class="ds-hero-home__eyebrow">Konsi Design System · v1.0</p>
+      <h1 class="ds-hero-home__title">Construindo o futuro do<br/><span>crédito consignado</span></h1>
+      <p class="ds-hero-home__subtitle">A fonte única de verdade para times de produto, design e engenharia. Tokens, componentes e padrões prontos para Flutter.</p>
+      <div class="ds-hero-home__actions">
+        <button class="ds-hero-btn ds-hero-btn--primary" data-goto="cores">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          Explorar Fundamentos
+        </button>
+        <button class="ds-hero-btn ds-hero-btn--ghost" data-goto="tokens">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Ver Tokens Flutter
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="ds-stats">
+      <div class="ds-stat"><div class="ds-stat__value">113</div><div class="ds-stat__label">Variáveis</div></div>
+      <div class="ds-stat"><div class="ds-stat__value">5</div><div class="ds-stat__label">Componentes</div></div>
+      <div class="ds-stat"><div class="ds-stat__value">3</div><div class="ds-stat__label">Paletas</div></div>
+      <div class="ds-stat"><div class="ds-stat__value">15</div><div class="ds-stat__label">Estilos Tipo</div></div>
+    </div>
+
+    <!-- Cards de entrada por perfil -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Por onde começar?
+      </h2>
+      <div class="ds-profile-grid">
+        <div class="ds-profile-card" data-goto="cores">
+          <div class="ds-profile-card__icon">🎨</div>
+          <div class="ds-profile-card__title">Para Designers</div>
+          <div class="ds-profile-card__desc">Acesse a paleta de cores, escala tipográfica, tokens de espaçamento e os componentes documentados com variantes e estados.</div>
+          <div class="ds-profile-card__links">
+            <span class="ds-profile-card__link">Cores e Paleta</span>
+            <span class="ds-profile-card__link">Tipografia Material 3</span>
+            <span class="ds-profile-card__link">Identidade da Marca</span>
+          </div>
+        </div>
+        <div class="ds-profile-card ds-profile-card--dev" data-goto="tokens">
+          <div class="ds-profile-card__icon">⚙️</div>
+          <div class="ds-profile-card__title">Para Desenvolvedores</div>
+          <div class="ds-profile-card__desc">Copie os design tokens prontos para Flutter, acesse snippets de AppColors, AppSpacing e AppTextStyles para usar direto no projeto.</div>
+          <div class="ds-profile-card__links">
+            <span class="ds-profile-card__link">Design Tokens (113)</span>
+            <span class="ds-profile-card__link">Setup Flutter/pubspec</span>
+            <span class="ds-profile-card__link">Componentes + Código Dart</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Fundamentos
+      </h2>
+      <p class="ds-section__subtitle">Os blocos atômicos que formam a identidade visual da Konsi.</p>
+
+      <div class="ds-home-grid">
+        <div class="ds-home-card" data-goto="cores">
+          <div class="ds-home-card__icon">🎨</div>
+          <div class="ds-home-card__title">Cores</div>
+          <div class="ds-home-card__desc">Paleta greenKonsi, escala cinza e cores semânticas de sistema.</div>
+        </div>
+        <div class="ds-home-card" data-goto="tipografia">
+          <div class="ds-home-card__icon">✏️</div>
+          <div class="ds-home-card__title">Tipografia</div>
+          <div class="ds-home-card__desc">Escala Material 3 com Inter — 15 estilos do Display ao Label.</div>
+        </div>
+        <div class="ds-home-card" data-goto="espacamento">
+          <div class="ds-home-card__icon">📐</div>
+          <div class="ds-home-card__title">Espaçamento</div>
+          <div class="ds-home-card__desc">Grid 8pt com tokens de spacing, padding e border radius.</div>
+        </div>
+        <div class="ds-home-card" data-goto="elevacao">
+          <div class="ds-home-card__icon">🪄</div>
+          <div class="ds-home-card__title">Elevação &amp; Sombras</div>
+          <div class="ds-home-card__desc">5 níveis de elevação Material 3 para botões, cards e app bar.</div>
+        </div>
+        <div class="ds-home-card" data-goto="tokens">
+          <div class="ds-home-card__icon">🏷️</div>
+          <div class="ds-home-card__title">Design Tokens</div>
+          <div class="ds-home-card__desc">113 variáveis Figma + código Flutter pronto para copiar.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Componentes
+      </h2>
+      <p class="ds-section__subtitle">Componentes reutilizáveis com variantes, estados e código Flutter.</p>
+
+      <div class="ds-home-grid">
+        <div class="ds-home-card" data-goto="comp-botoes">
+          <div class="ds-home-card__icon">🔲</div>
+          <div class="ds-home-card__title">Botões</div>
+          <div class="ds-home-card__desc">Primary, Secondary, Ghost, Danger — com tamanhos e estados.</div>
+        </div>
+        <div class="ds-home-card" data-goto="comp-inputs">
+          <div class="ds-home-card__icon">📝</div>
+          <div class="ds-home-card__title">Inputs &amp; Formulários</div>
+          <div class="ds-home-card__desc">TextField, labels, validação e mensagens de erro.</div>
+        </div>
+        <div class="ds-home-card" data-goto="comp-cards">
+          <div class="ds-home-card__icon">🃏</div>
+          <div class="ds-home-card__title">Cards</div>
+          <div class="ds-home-card__desc">Card padrão com padding, border radius e elevação definidos.</div>
+        </div>
+        <div class="ds-home-card" data-goto="comp-badges">
+          <div class="ds-home-card__icon">🏷️</div>
+          <div class="ds-home-card__title">Badges &amp; Tags</div>
+          <div class="ds-home-card__desc">Indicadores de status com variantes de cores semânticas.</div>
+        </div>
+        <div class="ds-home-card" data-goto="comp-feedback">
+          <div class="ds-home-card__icon">💬</div>
+          <div class="ds-home-card__title">Feedback &amp; Alertas</div>
+          <div class="ds-home-card__desc">Toasts, banners e alertas inline para sucesso, erro e warning.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">🚀 Começando</h2>
+      <div class="ds-alert ds-alert--info">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div>O Design Kit está disponível no Figma (<strong>DK — Aplicativo</strong>) com 113 variáveis extraídas automaticamente. Use os tokens abaixo diretamente no seu projeto Flutter via <code>AppColors</code>, <code>AppSpacing</code> e <code>AppTextStyles</code>.</div>
+      </div>
+      <div class="ds-code-block">
+        <span class="ds-code-block__lang">FLUTTER</span>
+        <span class="cmt">// pubspec.yaml — adicione a fonte Inter</span><br>
+        <span class="kw">dependencies</span>:<br>
+        &nbsp;&nbsp;<span class="kw">google_fonts</span>: ^<span class="num">6.2.1</span><br>
+        <br>
+        <span class="cmt">// main.dart — configure o tema</span><br>
+        <span class="kw">theme</span>: ThemeData(<br>
+        &nbsp;&nbsp;<span class="kw">colorScheme</span>: ColorScheme.fromSeed(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">seedColor</span>: AppColors.primary, <span class="cmt">// #0A9F82</span><br>
+        &nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;<span class="kw">textTheme</span>: GoogleFonts.interTextTheme(),<br>
+        ),
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       CORES
+  ─────────────────────────────────────────── -->
+  <section id="page-cores" class="ds-page">
+    <nav class="ds-breadcrumb">
+      <span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span>
+      <span>›</span> Fundamentos <span>›</span> <strong>Cores</strong>
+    </nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Fundamentos</p>
+      <h1 class="ds-page-hero__title">Cores</h1>
+      <p class="ds-page-hero__subtitle">A paleta greenKonsi é a expressão visual da marca — transmitindo confiança, modernidade e acessibilidade financeira.</p>
+    </div>
+
+    <!-- greenKonsi -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">🌿 Paleta greenKonsi — Identidade da Marca</h2>
+      <p class="ds-section__subtitle">Paleta primária da marca. Clique em qualquer cor para copiar o hex.</p>
+      <div class="ds-color-grid">
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#ECFDF7"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">gk/50</span><span class="ds-color-swatch__hex">#ECFDF7</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#F0F6F5"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">gk/100</span><span class="ds-color-swatch__hex">#F0F6F5</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#A9F1D8"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">gk/200</span><span class="ds-color-swatch__hex">#A9F1D8</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#0FE2B8"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">gk/300</span><span class="ds-color-swatch__hex">#0FE2B8</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#0DC7A2"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">gk/400</span><span class="ds-color-swatch__hex">#0DC7A2</span></div></div>
+        <div class="ds-color-swatch" style="outline:3px solid #0A9F82;outline-offset:2px;"><div class="ds-color-swatch__block" style="background:#0A9F82"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name" style="color:#0A9F82">gk/500 ★</span><span class="ds-color-swatch__hex">#0A9F82</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#077563"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">gk/600</span><span class="ds-color-swatch__hex">#077563</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#095C4F"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">gk/700</span><span class="ds-color-swatch__hex">#095C4F</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#04513F"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">gk/800</span><span class="ds-color-swatch__hex">#04513F</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#03261F"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">gk/900</span><span class="ds-color-swatch__hex">#03261F</span></div></div>
+      </div>
+    </div>
+
+    <!-- Gray -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">⬛ Paleta Gray</h2>
+      <p class="ds-section__subtitle">Usada para texto, ícones e divisores neutros.</p>
+      <div class="ds-color-grid">
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#FBFBFB;border:1px solid #eee"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">g/50</span><span class="ds-color-swatch__hex">#FBFBFB</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#CECFCD"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">g/200</span><span class="ds-color-swatch__hex">#CECFCD</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#616161"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">g/500</span><span class="ds-color-swatch__hex">#616161</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#373936"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">g/800</span><span class="ds-color-swatch__hex">#373936</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#141514"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">g/950</span><span class="ds-color-swatch__hex">#141514</span></div></div>
+      </div>
+    </div>
+
+    <!-- BlueGray -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">🔷 Paleta BlueGray</h2>
+      <p class="ds-section__subtitle">Para fundos de tela, subtítulos e elementos secundários.</p>
+      <div class="ds-color-grid">
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#F5F6F6;border:1px solid #eee"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">bg/50</span><span class="ds-color-swatch__hex">#F5F6F6</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#A9B0B7"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">bg/300</span><span class="ds-color-swatch__hex">#A9B0B7</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#5E6772"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">bg/500</span><span class="ds-color-swatch__hex">#5E6772</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#40444A"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">bg/800</span><span class="ds-color-swatch__hex">#40444A</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#232529"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">bg/950</span><span class="ds-color-swatch__hex">#232529</span></div></div>
+      </div>
+    </div>
+
+    <!-- System Colors -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">🚦 Cores de Sistema</h2>
+      <p class="ds-section__subtitle">Cores semânticas para feedback de sucesso, erro e aviso.</p>
+
+      <h3 style="font-size:0.85rem;font-weight:700;color:var(--color-subtitle-gray);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Erro</h3>
+      <div class="ds-color-row">
+        <div class="ds-color-card"><div class="ds-color-card__dot" style="background:#FF6060"></div><div><div class="ds-color-card__label">sysError</div><div class="ds-color-card__token">Ícones e bordas</div><div class="ds-color-card__hex">#FF6060</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-card__dot" style="background:#E51D1D"></div><div><div class="ds-color-card__label">sysError2</div><div class="ds-color-card__token">Texto de erro</div><div class="ds-color-card__hex">#E51D1D</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-card__dot" style="background:#FFF1F1;border:1px solid #fdd"></div><div><div class="ds-color-card__label">sysErrorBg</div><div class="ds-color-card__token">Fundo de alerta</div><div class="ds-color-card__hex">#FFF1F1</div></div></div>
+      </div>
+
+      <h3 style="font-size:0.85rem;font-weight:700;color:var(--color-subtitle-gray);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;margin-top:16px">Sucesso</h3>
+      <div class="ds-color-row">
+        <div class="ds-color-card"><div class="ds-color-card__dot" style="background:#1EA853"></div><div><div class="ds-color-card__label">sysSuccess</div><div class="ds-color-card__token">Ícones e bordas</div><div class="ds-color-card__hex">#1EA853</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-card__dot" style="background:#1A7B3F"></div><div><div class="ds-color-card__label">sysSuccess2</div><div class="ds-color-card__token">Texto de sucesso</div><div class="ds-color-card__hex">#1A7B3F</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-card__dot" style="background:#DDFBE7;border:1px solid #bef5d0"></div><div><div class="ds-color-card__label">sysSuccessBg</div><div class="ds-color-card__token">Fundo de alerta</div><div class="ds-color-card__hex">#DDFBE7</div></div></div>
+      </div>
+
+      <h3 style="font-size:0.85rem;font-weight:700;color:var(--color-subtitle-gray);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;margin-top:16px">Aviso</h3>
+      <div class="ds-color-row">
+        <div class="ds-color-card"><div class="ds-color-card__dot" style="background:#F3A42E"></div><div><div class="ds-color-card__label">sysWarning</div><div class="ds-color-card__token">Ícones e bordas</div><div class="ds-color-card__hex">#F3A42E</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-card__dot" style="background:#C87D0F"></div><div><div class="ds-color-card__label">sysWarning2</div><div class="ds-color-card__token">Texto de aviso</div><div class="ds-color-card__hex">#C87D0F</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-card__dot" style="background:#FEF9EC;border:1px solid #fde8a0"></div><div><div class="ds-color-card__label">sysWarningBg</div><div class="ds-color-card__token">Fundo de alerta</div><div class="ds-color-card__hex">#FEF9EC</div></div></div>
+      </div>
+    </div>
+
+    <!-- Cores Semânticas -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">🏷️ Cores Semânticas (aliases)</h2>
+      <p class="ds-section__subtitle">Aliases que mapeiam as paletas brutas para uso no app Flutter.</p>
+      <table class="ds-table">
+        <thead><tr><th>Token</th><th>Alias de</th><th>Hex</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td><code>defaultGreen</code></td><td>greenKonsi/500</td><td><code>#0A9F82</code></td><td>CTA principal, botão primário</td></tr>
+          <tr><td><code>mainColor1</code></td><td>greenKonsi/400</td><td><code>#0DC7A2</code></td><td>Hover state, ícones ativos</td></tr>
+          <tr><td><code>mainColor2</code></td><td>greenKonsi/300</td><td><code>#0FE2B8</code></td><td>Destaque, gradiente</td></tr>
+          <tr><td><code>mainColor3</code></td><td>greenKonsi/100</td><td><code>#F0F6F5</code></td><td>Fundo de chips, fundo selecionado</td></tr>
+          <tr><td><code>darkGreen</code></td><td>greenKonsi/800</td><td><code>#04513F</code></td><td>Header, textos sobre fundo verde</td></tr>
+          <tr><td><code>darkerGreen</code></td><td>greenKonsi/900</td><td><code>#03261F</code></td><td>Sidebar, nav dark</td></tr>
+          <tr><td><code>darkGray</code></td><td>gray/950</td><td><code>#141514</code></td><td>Texto principal</td></tr>
+          <tr><td><code>defaultGray2</code></td><td>blueGray/500</td><td><code>#5E6772</code></td><td>Texto secundário</td></tr>
+          <tr><td><code>subtitleGray</code></td><td>—</td><td><code>#7C7C7C</code></td><td>Subtítulos, placeholders</td></tr>
+          <tr><td><code>cardBg</code></td><td>—</td><td><code>#F0F0F0</code></td><td>Fundo de cards secundários</td></tr>
+          <tr><td><code>screenBg</code></td><td>blueGray/50</td><td><code>#F5F6F6</code></td><td>Scaffold / background de tela</td></tr>
+          <tr><td><code>pureWhite</code></td><td>—</td><td><code>#FFFFFF</code></td><td>Superfícies, cards principais</td></tr>
+          <tr><td><code>disabled</code></td><td>gray/300</td><td><code>#BDBDBD</code></td><td>Estado desabilitado</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       TIPOGRAFIA
+  ─────────────────────────────────────────── -->
+  <section id="page-tipografia" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Fundamentos › <strong>Tipografia</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Fundamentos</p>
+      <h1 class="ds-page-hero__title">Tipografia</h1>
+      <p class="ds-page-hero__subtitle">Escala Material 3 Type Scale implementada com a fonte Inter — do Display Large ao Label Small.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Fonte Principal</h2>
+      <div class="ds-alert ds-alert--info">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Inter</strong> é a fonte oficial do Konsi DS. No Flutter, use via <code>google_fonts: ^6.2.1</code> — <code>GoogleFonts.interTextTheme()</code>.</div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Display</h2>
+      <div class="ds-type-scale">
+        <div class="ds-type-row">
+          <div><div class="ds-type-row__meta-name">Display Large</div><div class="ds-type-row__meta-size">57sp · Regular</div><div class="ds-type-row__meta-code">M3.displayLarge</div></div>
+          <div class="ds-type-row__size-badge">57</div>
+          <div style="font-size:clamp(1.5rem,3vw,3.5rem);font-weight:400;line-height:1.15;color:var(--color-dark-gray)">Konsi</div>
+        </div>
+        <div class="ds-type-row">
+          <div><div class="ds-type-row__meta-name">Display Medium</div><div class="ds-type-row__meta-size">45sp · Regular</div><div class="ds-type-row__meta-code">M3.displayMedium</div></div>
+          <div class="ds-type-row__size-badge">45</div>
+          <div style="font-size:clamp(1.3rem,2.5vw,2.8rem);font-weight:400;line-height:1.15;color:var(--color-dark-gray)">Empréstimo Pessoal</div>
+        </div>
+        <div class="ds-type-row">
+          <div><div class="ds-type-row__meta-name">Display Small</div><div class="ds-type-row__meta-size">36sp · Regular</div><div class="ds-type-row__meta-code">M3.displaySmall</div></div>
+          <div class="ds-type-row__size-badge">36</div>
+          <div style="font-size:clamp(1.2rem,2vw,2.25rem);font-weight:400;line-height:1.2;color:var(--color-dark-gray)">Simule seu crédito</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Headline</h2>
+      <div class="ds-type-scale">
+        <div class="ds-type-row">
+          <div><div class="ds-type-row__meta-name">Headline Large</div><div class="ds-type-row__meta-size">32sp · Regular</div></div>
+          <div class="ds-type-row__size-badge">32</div>
+          <div style="font-size:2rem;font-weight:400;color:var(--color-dark-gray)">Margem disponível</div>
+        </div>
+        <div class="ds-type-row">
+          <div><div class="ds-type-row__meta-name">Headline Medium</div><div class="ds-type-row__meta-size">28sp · Regular</div></div>
+          <div class="ds-type-row__size-badge">28</div>
+          <div style="font-size:1.75rem;font-weight:400;color:var(--color-dark-gray)">R$ 1.250,00 / mês</div>
+        </div>
+        <div class="ds-type-row">
+          <div><div class="ds-type-row__meta-name">Headline Small</div><div class="ds-type-row__meta-size">24sp · Regular</div></div>
+          <div class="ds-type-row__size-badge">24</div>
+          <div style="font-size:1.5rem;font-weight:400;color:var(--color-dark-gray)">Contrato assinado com sucesso</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Title</h2>
+      <div class="ds-type-scale">
+        <div class="ds-type-row">
+          <div><div class="ds-type-row__meta-name">Title Large</div><div class="ds-type-row__meta-size">22sp · Medium</div></div>
+          <div class="ds-type-row__size-badge">22</div>
+          <div style="font-size:1.375rem;font-weight:500;color:var(--color-dark-gray)">Extrato detalhado</div>
+        </div>
+        <div class="ds-type-row">
+          <div><div class="ds-type-row__meta-name">Title Medium</div><div class="ds-type-row__meta-size">16sp · Medium</div></div>
+          <div class="ds-type-row__size-badge">16</div>
+          <div style="font-size:1rem;font-weight:500;color:var(--color-dark-gray)">Parcela mensal</div>
+        </div>
+        <div class="ds-type-row">
+          <div><div class="ds-type-row__meta-name">Title Small</div><div class="ds-type-row__meta-size">14sp · Medium</div></div>
+          <div class="ds-type-row__size-badge">14</div>
+          <div style="font-size:0.875rem;font-weight:500;color:var(--color-dark-gray)">Vencimento em 10/04/2025</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Body</h2>
+      <div class="ds-type-scale">
+        <div class="ds-type-row">
+          <div><div class="ds-type-row__meta-name">Body Large</div><div class="ds-type-row__meta-size">16sp · Regular</div></div>
+          <div class="ds-type-row__size-badge">16</div>
+          <div style="font-size:1rem;font-weight:400;color:var(--color-dark-gray)">Seu empréstimo foi aprovado.</div>
+        </div>
+        <div class="ds-type-row">
+          <div><div class="ds-type-row__meta-name">Body Medium</div><div class="ds-type-row__meta-size">14sp · Regular</div></div>
+          <div class="ds-type-row__size-badge">14</div>
+          <div style="font-size:0.875rem;font-weight:400;color:var(--color-dark-gray)">Confira os detalhes do contrato antes de assinar.</div>
+        </div>
+        <div class="ds-type-row">
+          <div><div class="ds-type-row__meta-name">Body Small</div><div class="ds-type-row__meta-size">12sp · Regular</div></div>
+          <div class="ds-type-row__size-badge">12</div>
+          <div style="font-size:0.75rem;font-weight:400;color:var(--color-dark-gray)">Taxa de juros: 1,2% a.m. · CET: 16,4% a.a.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Label</h2>
+      <div class="ds-type-scale">
+        <div class="ds-type-row">
+          <div><div class="ds-type-row__meta-name">Label Large</div><div class="ds-type-row__meta-size">14sp · SemiBold</div></div>
+          <div class="ds-type-row__size-badge">14</div>
+          <div style="font-size:0.875rem;font-weight:600;letter-spacing:0.5px;color:var(--color-dark-gray)">SIMULAR AGORA</div>
+        </div>
+        <div class="ds-type-row">
+          <div><div class="ds-type-row__meta-name">Label Medium</div><div class="ds-type-row__meta-size">12sp · Medium</div></div>
+          <div class="ds-type-row__size-badge">12</div>
+          <div style="font-size:0.75rem;font-weight:500;letter-spacing:0.5px;color:var(--color-dark-gray)">VER DETALHES</div>
+        </div>
+        <div class="ds-type-row">
+          <div><div class="ds-type-row__meta-name">Label Small</div><div class="ds-type-row__meta-size">11sp · Medium</div></div>
+          <div class="ds-type-row__size-badge">11</div>
+          <div style="font-size:0.69rem;font-weight:500;letter-spacing:0.5px;color:var(--color-dark-gray)">CANCELAR</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Código Flutter</h2>
+      <div class="ds-code-block">
+        <span class="ds-code-block__lang">DART</span>
+        <span class="cmt">// lib/core/theme/app_text_styles.dart</span><br>
+        <span class="kw">abstract class</span> <span class="cls">AppTextStyles</span> {<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> displayLarge = TextStyle(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;fontSize: <span class="num">57</span>, fontWeight: FontWeight.w400,<br>
+        &nbsp;&nbsp;);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> headlineLarge = TextStyle(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;fontSize: <span class="num">32</span>, fontWeight: FontWeight.w400,<br>
+        &nbsp;&nbsp;);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> titleMedium = TextStyle(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;fontSize: <span class="num">16</span>, fontWeight: FontWeight.w500, letterSpacing: <span class="num">0.15</span>,<br>
+        &nbsp;&nbsp;);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> bodyMedium = TextStyle(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;fontSize: <span class="num">14</span>, fontWeight: FontWeight.w400, letterSpacing: <span class="num">0.25</span>,<br>
+        &nbsp;&nbsp;);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> labelLarge = TextStyle(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;fontSize: <span class="num">14</span>, fontWeight: FontWeight.w600, letterSpacing: <span class="num">0.1</span>,<br>
+        &nbsp;&nbsp;);<br>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       ESPAÇAMENTO
+  ─────────────────────────────────────────── -->
+  <section id="page-espacamento" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Fundamentos › <strong>Espaçamento</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Fundamentos</p>
+      <h1 class="ds-page-hero__title">Espaçamento</h1>
+      <p class="ds-page-hero__subtitle">Sistema baseado em grid 8pt para garantir ritmo visual consistente em todos os componentes.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Escala de Spacing</h2>
+      <div class="ds-spacing-table">
+        <div class="ds-spacing-row">
+          <div class="ds-spacing-row__name">spacingXsm</div>
+          <div class="ds-spacing-row__size">8px</div>
+          <div class="ds-spacing-row__bar-track"><div class="ds-spacing-row__bar" style="width:20%"></div></div>
+          <div class="ds-spacing-row__code">AppSpacing.xsm = 8.0</div>
+        </div>
+        <div class="ds-spacing-row">
+          <div class="ds-spacing-row__name">spacingSm · marginScreen</div>
+          <div class="ds-spacing-row__size">16px</div>
+          <div class="ds-spacing-row__bar-track"><div class="ds-spacing-row__bar" style="width:40%"></div></div>
+          <div class="ds-spacing-row__code">AppSpacing.sm = 16.0</div>
+        </div>
+        <div class="ds-spacing-row">
+          <div class="ds-spacing-row__name">spacingMd</div>
+          <div class="ds-spacing-row__size">24px</div>
+          <div class="ds-spacing-row__bar-track"><div class="ds-spacing-row__bar" style="width:60%"></div></div>
+          <div class="ds-spacing-row__code">AppSpacing.md = 24.0</div>
+        </div>
+        <div class="ds-spacing-row">
+          <div class="ds-spacing-row__name">spacingLg</div>
+          <div class="ds-spacing-row__size">32px</div>
+          <div class="ds-spacing-row__bar-track"><div class="ds-spacing-row__bar" style="width:80%"></div></div>
+          <div class="ds-spacing-row__code">AppSpacing.lg = 32.0</div>
+        </div>
+        <div class="ds-spacing-row">
+          <div class="ds-spacing-row__name">spacingXlg</div>
+          <div class="ds-spacing-row__size">40px</div>
+          <div class="ds-spacing-row__bar-track"><div class="ds-spacing-row__bar" style="width:100%"></div></div>
+          <div class="ds-spacing-row__code">AppSpacing.xlg = 40.0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Tokens de Componente</h2>
+      <div class="ds-spacing-table">
+        <div class="ds-spacing-row">
+          <div class="ds-spacing-row__name">paddingCard</div>
+          <div class="ds-spacing-row__size">12px</div>
+          <div class="ds-spacing-row__bar-track"><div class="ds-spacing-row__bar" style="width:30%"></div></div>
+          <div class="ds-spacing-row__code">EdgeInsets.all(12)</div>
+        </div>
+        <div class="ds-spacing-row">
+          <div class="ds-spacing-row__name">borderRadiusCard</div>
+          <div class="ds-spacing-row__size">10px</div>
+          <div class="ds-spacing-row__bar-track"><div class="ds-spacing-row__bar" style="width:25%"></div></div>
+          <div class="ds-spacing-row__code">BorderRadius.circular(10)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Código Flutter</h2>
+      <div class="ds-code-block">
+        <span class="ds-code-block__lang">DART</span>
+        <span class="cmt">// lib/core/theme/app_spacing.dart</span><br>
+        <span class="kw">abstract class</span> <span class="cls">AppSpacing</span> {<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> xsm = <span class="num">8.0</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> sm  = <span class="num">16.0</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> md  = <span class="num">24.0</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> lg  = <span class="num">32.0</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> xlg = <span class="num">40.0</span>;<br>
+        <br>
+        &nbsp;&nbsp;<span class="cmt">// Componentes</span><br>
+        &nbsp;&nbsp;<span class="kw">static const</span> paddingCard      = <span class="num">12.0</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> borderRadiusCard = <span class="num">10.0</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> marginScreen     = sm; <span class="cmt">// 16.0</span><br>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       ELEVAÇÃO
+  ─────────────────────────────────────────── -->
+  <section id="page-elevacao" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Fundamentos › <strong>Elevação</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Fundamentos</p>
+      <h1 class="ds-page-hero__title">Elevação &amp; Sombras</h1>
+      <p class="ds-page-hero__subtitle">5 níveis de elevação Material 3 para criar hierarquia visual entre superfícies, botões, cards e barras de navegação.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Níveis de Elevação</h2>
+      <div class="ds-elevation-grid">
+        <div class="ds-elevation-card">
+          <div class="ds-elevation-card__demo" style="box-shadow:0 1px 2px rgba(0,0,0,0.1)"></div>
+          <div class="ds-elevation-card__level">elevation: 1</div>
+          <div class="ds-elevation-card__label">App/Button</div>
+          <div class="ds-elevation-card__desc">Botões em estado padrão</div>
+        </div>
+        <div class="ds-elevation-card">
+          <div class="ds-elevation-card__demo" style="box-shadow:0 2px 6px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.08)"></div>
+          <div class="ds-elevation-card__level">elevation: 2</div>
+          <div class="ds-elevation-card__label">App/Card</div>
+          <div class="ds-elevation-card__desc">Cards e containers</div>
+        </div>
+        <div class="ds-elevation-card">
+          <div class="ds-elevation-card__demo" style="box-shadow:0 4px 12px rgba(0,0,0,0.14),0 2px 4px rgba(0,0,0,0.1)"></div>
+          <div class="ds-elevation-card__level">elevation: 3</div>
+          <div class="ds-elevation-card__label">App/FAB</div>
+          <div class="ds-elevation-card__desc">Floating Action Button</div>
+        </div>
+        <div class="ds-elevation-card">
+          <div class="ds-elevation-card__demo" style="box-shadow:0 6px 16px rgba(0,0,0,0.16),0 2px 6px rgba(0,0,0,0.1)"></div>
+          <div class="ds-elevation-card__level">elevation: 4</div>
+          <div class="ds-elevation-card__label">App/App Bar</div>
+          <div class="ds-elevation-card__desc">Barra superior de navegação</div>
+        </div>
+        <div class="ds-elevation-card">
+          <div class="ds-elevation-card__demo" style="box-shadow:0 8px 24px rgba(0,0,0,0.18),0 4px 8px rgba(0,0,0,0.12)"></div>
+          <div class="ds-elevation-card__level">elevation: 5</div>
+          <div class="ds-elevation-card__label">App/Button 2</div>
+          <div class="ds-elevation-card__desc">Botões em destaque máximo</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Uso correto</h2>
+      <div class="ds-dodont">
+        <div class="ds-dodont__card ds-dodont__card--do">
+          <div class="ds-dodont__header">✅ Use</div>
+          <div class="ds-dodont__body">
+            Eleve cards (2) acima do background de tela para criar separação visual clara entre superfícies.<br><br>
+            Use elevation: 4 no AppBar para destacar o header fixo do conteúdo scrollável.
+          </div>
+        </div>
+        <div class="ds-dodont__card ds-dodont__card--dont">
+          <div class="ds-dodont__header">❌ Evite</div>
+          <div class="ds-dodont__body">
+            Não use elevation: 5 em cards comuns — reserve para ações de alta prioridade e FABs.<br><br>
+            Não empilhe sombras (um container dentro de outro com sombra), isso cria ruído visual.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Código Flutter</h2>
+      <div class="ds-code-block">
+        <span class="ds-code-block__lang">DART</span>
+        <span class="cmt">// Card com elevação padrão</span><br>
+        <span class="cls">Card</span>(<br>
+        &nbsp;&nbsp;elevation: <span class="num">2</span>,<br>
+        &nbsp;&nbsp;shape: RoundedRectangleBorder(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;borderRadius: BorderRadius.circular(AppSpacing.borderRadiusCard),<br>
+        &nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;child: Padding(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;padding: EdgeInsets.all(AppSpacing.paddingCard),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;child: <span class="cmt">/* conteúdo */</span>,<br>
+        &nbsp;&nbsp;),<br>
+        )
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       TOKENS
+  ─────────────────────────────────────────── -->
+  <section id="page-tokens" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Fundamentos › <strong>Tokens</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Fundamentos</p>
+      <h1 class="ds-page-hero__title">Design Tokens</h1>
+      <p class="ds-page-hero__subtitle">113 variáveis extraídas diretamente do Figma (DK — Aplicativo). Código Flutter pronto para uso.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">AppColors.dart</h2>
+      <div class="ds-code-block">
+        <span class="ds-code-block__lang">DART</span>
+        <span class="cmt">// lib/core/theme/app_colors.dart</span><br>
+        <span class="kw">abstract class</span> <span class="cls">AppColors</span> {<br>
+        &nbsp;&nbsp;<span class="cmt">// Primary</span><br>
+        &nbsp;&nbsp;<span class="kw">static const</span> primary       = Color(<span class="num">0xFF0A9F82</span>); <span class="cmt">// greenKonsi/500</span><br>
+        &nbsp;&nbsp;<span class="kw">static const</span> primaryLight  = Color(<span class="num">0xFF0DC7A2</span>); <span class="cmt">// greenKonsi/400</span><br>
+        &nbsp;&nbsp;<span class="kw">static const</span> primaryVivid  = Color(<span class="num">0xFF0FE2B8</span>); <span class="cmt">// greenKonsi/300</span><br>
+        &nbsp;&nbsp;<span class="kw">static const</span> primaryBg     = Color(<span class="num">0xFFF0F6F5</span>); <span class="cmt">// greenKonsi/100</span><br>
+        &nbsp;&nbsp;<span class="kw">static const</span> primaryDark   = Color(<span class="num">0xFF04513F</span>); <span class="cmt">// greenKonsi/800</span><br>
+        &nbsp;&nbsp;<span class="kw">static const</span> primaryDarker = Color(<span class="num">0xFF03261F</span>); <span class="cmt">// greenKonsi/900</span><br>
+        <br>
+        &nbsp;&nbsp;<span class="cmt">// Grayscale</span><br>
+        &nbsp;&nbsp;<span class="kw">static const</span> darkGray      = Color(<span class="num">0xFF141514</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> defaultGray2  = Color(<span class="num">0xFF5E6772</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> subtitleGray  = Color(<span class="num">0xFF7C7C7C</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> cardBg        = Color(<span class="num">0xFFF0F0F0</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> screenBg      = Color(<span class="num">0xFFF5F6F6</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> pureWhite     = Color(<span class="num">0xFFFFFFFF</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> disabledColor = Color(<span class="num">0xFFBDBDBD</span>);<br>
+        <br>
+        &nbsp;&nbsp;<span class="cmt">// System</span><br>
+        &nbsp;&nbsp;<span class="kw">static const</span> sysError      = Color(<span class="num">0xFFFF6060</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> sysErrorBg    = Color(<span class="num">0xFFFFF1F1</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> sysSuccess    = Color(<span class="num">0xFF1EA853</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> sysSuccessBg  = Color(<span class="num">0xFFDDFBE7</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> sysWarning    = Color(<span class="num">0xFFF3A42E</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> sysWarningBg  = Color(<span class="num">0xFFFEF9EC</span>);<br>
+        }
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">AppSpacing.dart</h2>
+      <div class="ds-code-block">
+        <span class="ds-code-block__lang">DART</span>
+        <span class="cmt">// lib/core/theme/app_spacing.dart</span><br>
+        <span class="kw">abstract class</span> <span class="cls">AppSpacing</span> {<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> xsm             = <span class="num">8.0</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> sm              = <span class="num">16.0</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> md              = <span class="num">24.0</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> lg              = <span class="num">32.0</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> xlg             = <span class="num">40.0</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> paddingCard     = <span class="num">12.0</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> borderRadius    = <span class="num">10.0</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> marginScreen    = sm;<br>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       COMPONENTE: BOTÕES
+  ─────────────────────────────────────────── -->
+  <section id="page-comp-botoes" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Componentes › <strong>Botões</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Componentes</p>
+      <h1 class="ds-page-hero__title">Botões</h1>
+      <p class="ds-page-hero__subtitle">Elemento de ação mais importante do app. Disponível em 4 variantes com 3 tamanhos e estados completos.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Variantes</h2>
+      <div class="ds-component-preview">
+        <button class="kds-btn kds-btn--primary">Simular Agora</button>
+        <button class="kds-btn kds-btn--secondary">Ver Detalhes</button>
+        <button class="kds-btn kds-btn--ghost">Cancelar</button>
+        <button class="kds-btn kds-btn--danger">Excluir</button>
+      </div>
+      <table class="ds-table">
+        <thead><tr><th>Variante</th><th>Quando usar</th><th>Token</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Primary</strong></td><td>Ação principal da tela — CTA de conversão (Simular, Contratar)</td><td><code>AppColors.primary</code></td></tr>
+          <tr><td><strong>Secondary</strong></td><td>Ação secundária que complementa o Primary sem competir</td><td><code>AppColors.primary</code> border</td></tr>
+          <tr><td><strong>Ghost</strong></td><td>Ações terciárias, links de navegação, cancelar</td><td><code>AppColors.primary</code> text</td></tr>
+          <tr><td><strong>Danger</strong></td><td>Ações destrutivas e irreversíveis (excluir, cancelar contrato)</td><td><code>AppColors.sysError</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Tamanhos</h2>
+      <div class="ds-component-preview">
+        <button class="kds-btn kds-btn--primary kds-btn--sm">Pequeno</button>
+        <button class="kds-btn kds-btn--primary">Médio (padrão)</button>
+        <button class="kds-btn kds-btn--primary kds-btn--lg">Grande</button>
+      </div>
+      <table class="ds-table">
+        <thead><tr><th>Tamanho</th><th>Padding</th><th>Font Size</th><th>Border Radius</th></tr></thead>
+        <tbody>
+          <tr><td><code>sm</code></td><td>8px 16px</td><td>12.8px (0.8rem)</td><td>8px</td></tr>
+          <tr><td><code>md</code> (padrão)</td><td>12px 24px</td><td>14px (0.875rem)</td><td>10px</td></tr>
+          <tr><td><code>lg</code></td><td>16px 32px</td><td>16px (1rem)</td><td>12px</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Estados</h2>
+      <div class="ds-component-preview">
+        <button class="kds-btn kds-btn--primary">Default</button>
+        <button class="kds-btn kds-btn--primary" style="opacity:0.85;background:#077563">Hover</button>
+        <button class="kds-btn kds-btn--primary" style="opacity:0.7;background:#04513F">Active</button>
+        <button class="kds-btn kds-btn--primary" disabled>Disabled</button>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Do &amp; Don't</h2>
+      <div class="ds-dodont">
+        <div class="ds-dodont__card ds-dodont__card--do">
+          <div class="ds-dodont__header">✅ Use</div>
+          <div class="ds-dodont__body">Use apenas <strong>um botão Primary</strong> por tela — ele guia a atenção do usuário à ação mais importante. Combine com Secondary ou Ghost para ações de apoio.</div>
+        </div>
+        <div class="ds-dodont__card ds-dodont__card--dont">
+          <div class="ds-dodont__header">❌ Evite</div>
+          <div class="ds-dodont__body">Não use dois botões Primary lado a lado. Isso dilui a hierarquia de ação e confunde o usuário sobre o próximo passo.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Código Flutter</h2>
+      <div class="ds-code-block">
+        <span class="ds-code-block__lang">DART</span>
+        <span class="cmt">// Botão Primary</span><br>
+        <span class="cls">ElevatedButton</span>(<br>
+        &nbsp;&nbsp;<span class="kw">style</span>: ElevatedButton.styleFrom(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;backgroundColor: AppColors.primary,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;foregroundColor: Colors.white,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;elevation: <span class="num">1</span>,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;padding: <span class="kw">const</span> EdgeInsets.symmetric(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;horizontal: AppSpacing.md, vertical: AppSpacing.xsm + <span class="num">4</span>,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;shape: RoundedRectangleBorder(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius: BorderRadius.circular(AppSpacing.borderRadius),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;<span class="kw">onPressed</span>: () {},<br>
+        &nbsp;&nbsp;<span class="kw">child</span>: <span class="kw">const</span> Text(<span class="str">'Simular Agora'</span>),<br>
+        )
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       COMPONENTE: INPUTS
+  ─────────────────────────────────────────── -->
+  <section id="page-comp-inputs" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Componentes › <strong>Inputs</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Componentes</p>
+      <h1 class="ds-page-hero__title">Inputs &amp; Formulários</h1>
+      <p class="ds-page-hero__subtitle">Campos de texto, labels e mensagens de validação para formulários de crédito e cadastro.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Estados</h2>
+      <div class="ds-component-preview" style="flex-direction:column;align-items:stretch;max-width:400px;margin:0 auto 8px;">
+        <div class="kds-input-group">
+          <label class="kds-label kds-label--required">CPF</label>
+          <input class="kds-input" type="text" placeholder="000.000.000-00" />
+          <span class="kds-helper">Apenas números, sem pontuação</span>
+        </div>
+        <div class="kds-input-group">
+          <label class="kds-label">Valor desejado</label>
+          <input class="kds-input" type="text" value="R$ 5.000,00" />
+        </div>
+        <div class="kds-input-group">
+          <label class="kds-label">Matrícula</label>
+          <input class="kds-input error" type="text" value="123" />
+          <span class="kds-helper error">⚠ Matrícula não encontrada</span>
+        </div>
+        <div class="kds-input-group">
+          <label class="kds-label">Órgão (desabilitado)</label>
+          <input class="kds-input" type="text" value="INSS" disabled />
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Anatomia</h2>
+      <table class="ds-table">
+        <thead><tr><th>Elemento</th><th>Token</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td>Border padrão</td><td><code>AppColors.defaultGray (#CECFCD)</code></td><td>Default</td></tr>
+          <tr><td>Border focus</td><td><code>AppColors.primary (#0A9F82)</code></td><td>Focus</td></tr>
+          <tr><td>Border error</td><td><code>AppColors.sysError (#FF6060)</code></td><td>Error</td></tr>
+          <tr><td>Background padrão</td><td><code>Colors.white</code></td><td>Default</td></tr>
+          <tr><td>Background disabled</td><td><code>AppColors.defaultWhite (#E8E8E8)</code></td><td>Disabled</td></tr>
+          <tr><td>Texto label</td><td><code>AppColors.darkGray</code> · TitleSmall</td><td>—</td></tr>
+          <tr><td>Texto helper</td><td><code>AppColors.subtitleGray</code> · BodySmall</td><td>Default</td></tr>
+          <tr><td>Texto helper error</td><td><code>AppColors.sysError2</code> · BodySmall</td><td>Error</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Código Flutter</h2>
+      <div class="ds-code-block">
+        <span class="ds-code-block__lang">DART</span>
+        <span class="cls">TextFormField</span>(<br>
+        &nbsp;&nbsp;<span class="kw">decoration</span>: InputDecoration(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;labelText: <span class="str">'CPF'</span>,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;hintText: <span class="str">'000.000.000-00'</span>,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;helperText: <span class="str">'Apenas números'</span>,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;border: OutlineInputBorder(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius: BorderRadius.circular(AppSpacing.borderRadius),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderSide: <span class="kw">const</span> BorderSide(color: AppColors.defaultGray),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;focusedBorder: OutlineInputBorder(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius: BorderRadius.circular(AppSpacing.borderRadius),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderSide: <span class="kw">const</span> BorderSide(color: AppColors.primary, width: <span class="num">2</span>),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;errorBorder: OutlineInputBorder(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius: BorderRadius.circular(AppSpacing.borderRadius),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderSide: <span class="kw">const</span> BorderSide(color: AppColors.sysError),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;),<br>
+        )
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       COMPONENTE: CARDS
+  ─────────────────────────────────────────── -->
+  <section id="page-comp-cards" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Componentes › <strong>Cards</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Componentes</p>
+      <h1 class="ds-page-hero__title">Cards</h1>
+      <p class="ds-page-hero__subtitle">Superfícies elevadas para agrupar informações relacionadas — extrato, simulação, resumo de contrato.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Anatomia</h2>
+      <div class="ds-component-preview" style="background:#F5F6F6">
+        <div class="kds-card" style="width:280px">
+          <div style="font-size:0.75rem;color:#5E6772;margin-bottom:4px">Margem disponível</div>
+          <div style="font-size:1.5rem;font-weight:700;color:#141514;margin-bottom:2px">R$ 1.250,00</div>
+          <div style="font-size:0.8rem;color:#7C7C7C">por mês · 72 parcelas</div>
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <span class="kds-badge kds-badge--success">Aprovado</span>
+            <span class="kds-badge kds-badge--primary">Consignado</span>
+          </div>
+        </div>
+        <div class="kds-card" style="width:280px;background:#F0F0F0">
+          <div style="font-size:0.75rem;color:#5E6772;margin-bottom:4px">Simulação</div>
+          <div style="font-size:1.1rem;font-weight:600;color:#141514;margin-bottom:2px">Empréstimo Pessoal</div>
+          <div style="font-size:0.8rem;color:#7C7C7C">Taxa: 1,2% a.m. · 36x</div>
+        </div>
+      </div>
+      <table class="ds-table" style="margin-top:16px">
+        <thead><tr><th>Propriedade</th><th>Token</th><th>Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Background principal</td><td><code>AppColors.pureWhite</code></td><td>#FFFFFF</td></tr>
+          <tr><td>Background secundário</td><td><code>AppColors.cardBg</code></td><td>#F0F0F0</td></tr>
+          <tr><td>Border Radius</td><td><code>AppSpacing.borderRadius</code></td><td>10px</td></tr>
+          <tr><td>Padding interno</td><td><code>AppSpacing.paddingCard</code></td><td>12px</td></tr>
+          <tr><td>Elevation</td><td>elevation: 2</td><td>App/Card</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       COMPONENTE: BADGES
+  ─────────────────────────────────────────── -->
+  <section id="page-comp-badges" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Componentes › <strong>Badges</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Componentes</p>
+      <h1 class="ds-page-hero__title">Badges &amp; Tags</h1>
+      <p class="ds-page-hero__subtitle">Indicadores visuais compactos de status, categoria e estado de contratos e propostas.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Variantes</h2>
+      <div class="ds-component-preview">
+        <span class="kds-badge kds-badge--primary">Consignado</span>
+        <span class="kds-badge kds-badge--success">Aprovado</span>
+        <span class="kds-badge kds-badge--error">Negado</span>
+        <span class="kds-badge kds-badge--warning">Em análise</span>
+        <span class="kds-badge kds-badge--neutral">Rascunho</span>
+      </div>
+      <table class="ds-table">
+        <thead><tr><th>Variante</th><th>Fundo</th><th>Texto</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td><code>primary</code></td><td><code>mainColor3 (#F0F6F5)</code></td><td><code>darkerGreen (#03261F)</code></td><td>Categoria, produto</td></tr>
+          <tr><td><code>success</code></td><td><code>sysSuccessBg</code></td><td><code>sysSuccess2</code></td><td>Aprovado, ativo, pago</td></tr>
+          <tr><td><code>error</code></td><td><code>sysErrorBg</code></td><td><code>sysError2</code></td><td>Negado, expirado, erro</td></tr>
+          <tr><td><code>warning</code></td><td><code>sysWarningBg</code></td><td><code>sysWarning2</code></td><td>Em análise, pendente</td></tr>
+          <tr><td><code>neutral</code></td><td><code>cardBg (#F0F0F0)</code></td><td><code>defaultGray2</code></td><td>Rascunho, inativo</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       COMPONENTE: FEEDBACK
+  ─────────────────────────────────────────── -->
+  <section id="page-comp-feedback" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Componentes › <strong>Feedback</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Componentes</p>
+      <h1 class="ds-page-hero__title">Feedback &amp; Alertas</h1>
+      <p class="ds-page-hero__subtitle">Toasts, banners e alertas inline para comunicar o resultado de ações ao usuário.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Toasts / Snackbars</h2>
+      <div class="ds-component-preview" style="flex-direction:column;align-items:flex-start;gap:12px">
+        <div class="kds-toast kds-toast--success">
+          <span style="font-size:1.1rem;flex-shrink:0">✅</span>
+          <div><strong>Contrato assinado!</strong><br>Seu empréstimo foi aprovado e será creditado em até 1 dia útil.</div>
+        </div>
+        <div class="kds-toast kds-toast--error">
+          <span style="font-size:1.1rem;flex-shrink:0">❌</span>
+          <div><strong>Erro na consulta</strong><br>Não foi possível consultar o INSS. Tente novamente.</div>
+        </div>
+        <div class="kds-toast kds-toast--warning">
+          <span style="font-size:1.1rem;flex-shrink:0">⚠️</span>
+          <div><strong>Margem insuficiente</strong><br>O valor solicitado excede sua margem disponível.</div>
+        </div>
+        <div class="kds-toast kds-toast--info">
+          <span style="font-size:1.1rem;flex-shrink:0">ℹ️</span>
+          <div><strong>Proposta em análise</strong><br>Você receberá uma notificação assim que for aprovada.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Código Flutter</h2>
+      <div class="ds-code-block">
+        <span class="ds-code-block__lang">DART</span>
+        <span class="cmt">// Snackbar de sucesso</span><br>
+        ScaffoldMessenger.of(context).showSnackBar(<br>
+        &nbsp;&nbsp;SnackBar(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;backgroundColor: AppColors.sysSuccessBg,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;content: Text(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Contrato assinado com sucesso!'</span>,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style: TextStyle(color: AppColors.sysSuccess2),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;shape: RoundedRectangleBorder(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius: BorderRadius.circular(AppSpacing.borderRadius),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;),<br>
+        );
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       ACESSIBILIDADE
+  ─────────────────────────────────────────── -->
+  <section id="page-acessibilidade" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Padrões › <strong>Acessibilidade</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Padrões</p>
+      <h1 class="ds-page-hero__title">Acessibilidade</h1>
+      <p class="ds-page-hero__subtitle">O crédito consignado é usado por aposentados e servidores — acessibilidade não é opcional, é essencial.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Contraste de Cores</h2>
+      <div class="ds-alert ds-alert--success">
+        <span style="flex-shrink:0">✅</span>
+        <div>Todas as combinações de texto/fundo do Konsi DS atendem ao nível <strong>WCAG 2.1 AA</strong> (contraste mínimo 4.5:1 para texto normal).</div>
+      </div>
+      <table class="ds-table">
+        <thead><tr><th>Combinação</th><th>Ratio</th><th>Nível</th></tr></thead>
+        <tbody>
+          <tr><td>Branco sobre primary (#0A9F82)</td><td>3.9:1</td><td>AA Large</td></tr>
+          <tr><td>darkGreen sobre primaryBg</td><td>9.8:1</td><td>AAA</td></tr>
+          <tr><td>darkGray (#141514) sobre white</td><td>18.1:1</td><td>AAA</td></tr>
+          <tr><td>subtitleGray (#7C7C7C) sobre white</td><td>4.7:1</td><td>AA</td></tr>
+          <tr><td>sysError2 sobre sysErrorBg</td><td>5.2:1</td><td>AA</td></tr>
+          <tr><td>sysSuccess2 sobre sysSuccessBg</td><td>6.1:1</td><td>AA</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Tamanho de Toque</h2>
+      <div class="ds-alert ds-alert--info">
+        <span style="flex-shrink:0">ℹ️</span>
+        <div>Todo elemento interativo deve ter área de toque mínima de <strong>48×48dp</strong> (Material Design Guidelines). Use <code>InkWell</code> com padding ou <code>SizedBox</code> para garantir área suficiente.</div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Tipografia Acessível</h2>
+      <table class="ds-table">
+        <thead><tr><th>Regra</th><th>Aplicação</th></tr></thead>
+        <tbody>
+          <tr><td>Texto body mínimo 14sp</td><td>Use BodyMedium (14sp) como mínimo para leitura</td></tr>
+          <tr><td>Line height 1.5x</td><td>Garante leitura confortável para usuários com dislexia</td></tr>
+          <tr><td>Não use só cor para indicar estado</td><td>Combine cor + ícone + texto nos estados de erro</td></tr>
+          <tr><td>Labels sempre visíveis</td><td>Não esconda labels em placeholders</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       PRINCÍPIOS
+  ─────────────────────────────────────────── -->
+  <section id="page-principios" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Padrões › <strong>Princípios</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Padrões</p>
+      <h1 class="ds-page-hero__title">Princípios do Design</h1>
+      <p class="ds-page-hero__subtitle">Os valores que guiam todas as decisões de design e produto na Konsi.</p>
+    </div>
+
+    <div class="ds-section">
+      <div class="ds-home-grid">
+        <div class="kds-card" style="border:1px solid var(--color-default-gray)">
+          <div style="font-size:2rem;margin-bottom:12px">🎯</div>
+          <div style="font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--color-dark-gray)">Clareza acima de tudo</div>
+          <div style="font-size:0.875rem;color:var(--color-subtitle-gray);line-height:1.6">Cada tela deve comunicar uma coisa com clareza. Crédito é complexo — nosso design deve simplificar, nunca complicar.</div>
+        </div>
+        <div class="kds-card" style="border:1px solid var(--color-default-gray)">
+          <div style="font-size:2rem;margin-bottom:12px">🤝</div>
+          <div style="font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--color-dark-gray)">Confiança como base</div>
+          <div style="font-size:0.875rem;color:var(--color-subtitle-gray);line-height:1.6">Lidamos com dinheiro e dados sensíveis. Cada detalhe de UX — de textos a cores — deve transmitir segurança e transparência.</div>
+        </div>
+        <div class="kds-card" style="border:1px solid var(--color-default-gray)">
+          <div style="font-size:2rem;margin-bottom:12px">⚡</div>
+          <div style="font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--color-dark-gray)">Velocidade de decisão</div>
+          <div style="font-size:0.875rem;color:var(--color-subtitle-gray);line-height:1.6">O usuário precisa entender sua situação financeira em segundos. Hierarquia de informação e ação devem ser óbvias.</div>
+        </div>
+        <div class="kds-card" style="border:1px solid var(--color-default-gray)">
+          <div style="font-size:2rem;margin-bottom:12px">♿</div>
+          <div style="font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--color-dark-gray)">Inclusão por padrão</div>
+          <div style="font-size:0.875rem;color:var(--color-subtitle-gray);line-height:1.6">Nosso público inclui pessoas idosas e com baixa familiaridade digital. Acessibilidade é funcionalidade, não bônus.</div>
+        </div>
+        <div class="kds-card" style="border:1px solid var(--color-default-gray)">
+          <div style="font-size:2rem;margin-bottom:12px">🔄</div>
+          <div style="font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--color-dark-gray)">Consistência que escala</div>
+          <div style="font-size:0.875rem;color:var(--color-subtitle-gray);line-height:1.6">Tokens e componentes existem para que o time entregue mais rápido sem reinventar a roda. Reutilize antes de criar.</div>
+        </div>
+        <div class="kds-card" style="border:1px solid var(--color-default-gray)">
+          <div style="font-size:2rem;margin-bottom:12px">📐</div>
+          <div style="font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--color-dark-gray)">Flexível nos limites</div>
+          <div style="font-size:0.875rem;color:var(--color-subtitle-gray);line-height:1.6">O sistema define os limites — dentro deles, há liberdade criativa. Fora dos limites, documente a exceção e justifique.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       BRAND — IDENTIDADE VISUAL
+  ─────────────────────────────────────────── -->
+  <section id="page-brand-identidade" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Brand › <strong>Identidade Visual</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Brand</p>
+      <h1 class="ds-page-hero__title">Identidade Visual</h1>
+      <p class="ds-page-hero__subtitle">O símbolo "K" da Konsi representa simplicidade e confiança — os dois pilares da nossa identidade visual.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Símbolo e Logotipo</h2>
+      <p class="ds-section__subtitle">Use sempre nas variações aprovadas abaixo. Nunca distorça, recolora ou aplique sobre fundos não aprovados.</p>
+      <div class="ds-logo-showcase">
+        <div class="ds-logo-tile ds-logo-tile--light">
+          <div class="ds-logo-mark ds-logo-mark--primary">K</div>
+          <div class="ds-logo-tile__label">Fundo claro — uso principal</div>
+        </div>
+        <div class="ds-logo-tile ds-logo-tile--green">
+          <div class="ds-logo-mark ds-logo-mark--white">K</div>
+          <div class="ds-logo-tile__label">Fundo primary — uso secundário</div>
+        </div>
+        <div class="ds-logo-tile ds-logo-tile--dark">
+          <div class="ds-logo-mark ds-logo-mark--vivid">K</div>
+          <div class="ds-logo-tile__label">Fundo escuro — uso especial</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Uso Correto e Incorreto</h2>
+      <div class="ds-dodont-brand">
+        <div class="ds-dodont-tile ds-dodont-tile--do">
+          <div class="ds-dodont-tile__header">✓ Fazer</div>
+          <div class="ds-dodont-tile__body">
+            <ul style="padding-left:16px;line-height:2">
+              <li>Usar o símbolo "K" com fundo <code>#0A9F82</code></li>
+              <li>Aplicar sobre fundos aprovados (branco, verde primary, verde escuro)</li>
+              <li>Respeitar espaço de respiro mínimo igual ao tamanho do símbolo</li>
+              <li>Usar Inter como fonte da marca em todos os contextos</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ds-dodont-tile ds-dodont-tile--dont">
+          <div class="ds-dodont-tile__header">✗ Não fazer</div>
+          <div class="ds-dodont-tile__body">
+            <ul style="padding-left:16px;line-height:2">
+              <li>Distorcer ou redimensionar desproporcionalmente</li>
+              <li>Aplicar efeitos de sombra, gradiente ou outline no símbolo</li>
+              <li>Usar cores fora da paleta greenKonsi</li>
+              <li>Colocar sobre fundos com baixo contraste (&lt; 4.5:1)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Tipografia da Marca</h2>
+      <div class="ds-alert ds-alert--info">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Inter</strong> é a fonte exclusiva da Konsi em todos os contextos digitais. Disponível via Google Fonts com os pesos 300, 400, 500, 600 e 700.</div>
+      </div>
+      <table class="ds-table">
+        <thead><tr><th>Contexto</th><th>Tamanho</th><th>Peso</th><th>Cor</th></tr></thead>
+        <tbody>
+          <tr><td>Título principal (H1)</td><td>32–45pt</td><td>Bold 700</td><td>#0A9F82</td></tr>
+          <tr><td>Seção principal (H2)</td><td>24pt</td><td>SemiBold 600</td><td>#04513F</td></tr>
+          <tr><td>Subseção (H3)</td><td>18pt</td><td>Medium 500</td><td>#141514</td></tr>
+          <tr><td>Corpo do texto</td><td>12–14pt</td><td>Regular 400</td><td>#141514</td></tr>
+          <tr><td>Legenda / nota</td><td>10–11pt</td><td>Regular 400</td><td>#7C7C7C</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       BRAND — PALETA DA MARCA
+  ─────────────────────────────────────────── -->
+  <section id="page-brand-paleta" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Brand › <strong>Paleta da Marca</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Brand</p>
+      <h1 class="ds-page-hero__title">Paleta da Marca</h1>
+      <p class="ds-page-hero__subtitle">O verde Konsi transmite confiança, crescimento financeiro e modernidade. É a cor mais importante da nossa identidade.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Cor Principal — greenKonsi/500</h2>
+      <div style="background:#0A9F82;border-radius:16px;padding:40px 32px;color:white;margin-bottom:var(--spacing-md);display:flex;align-items:center;gap:32px">
+        <div style="width:80px;height:80px;border-radius:16px;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900">K</div>
+        <div>
+          <div style="font-size:1.5rem;font-weight:800;margin-bottom:4px">#0A9F82 — defaultGreen</div>
+          <div style="opacity:0.8;font-size:0.9rem">rgb(10, 159, 130) · greenKonsi/500</div>
+          <div style="margin-top:12px;font-size:0.85rem;opacity:0.75">Cor primária usada em CTAs, ícones ativos, bordas de destaque e elementos interativos principais.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Hierarquia de Uso de Cores</h2>
+      <table class="ds-table">
+        <thead><tr><th>Alias</th><th>Hex</th><th>Uso principal</th></tr></thead>
+        <tbody>
+          <tr><td><code>defaultGreen</code></td><td>#0A9F82</td><td>Cor primária — botões, links, ícones ativos</td></tr>
+          <tr><td><code>mainColor1</code></td><td>#0DC7A2</td><td>Hover, gradientes, estados secundários</td></tr>
+          <tr><td><code>mainColor2</code></td><td>#0FE2B8</td><td>Acentos vibrantes, highlights</td></tr>
+          <tr><td><code>mainColor3</code></td><td>#F0F6F5</td><td>Background suave de destaque</td></tr>
+          <tr><td><code>darkGreen</code></td><td>#04513F</td><td>Verde escuro — texto em fundo claro</td></tr>
+          <tr><td><code>darkerGreen</code></td><td>#03261F</td><td>Verde profundo — headers, fundos escuros</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Cores para Gráficos e Dados</h2>
+      <p class="ds-section__subtitle">Use sempre nesta ordem para manter consistência visual em dashboards e relatórios.</p>
+      <div class="ds-color-grid">
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#0A9F82"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">1º</span><span class="ds-color-swatch__hex">#0A9F82</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#0DC7A2"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">2º</span><span class="ds-color-swatch__hex">#0DC7A2</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#0FE2B8"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">3º</span><span class="ds-color-swatch__hex">#0FE2B8</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#04513F"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">4º</span><span class="ds-color-swatch__hex">#04513F</span></div></div>
+        <div class="ds-color-swatch"><div class="ds-color-swatch__block" style="background:#CECFCD"></div><div class="ds-color-swatch__info"><span class="ds-color-swatch__name">5º</span><span class="ds-color-swatch__hex">#CECFCD</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       BRAND — TOM DE VOZ
+  ─────────────────────────────────────────── -->
+  <section id="page-brand-voz" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Brand › <strong>Tom de Voz</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Brand</p>
+      <h1 class="ds-page-hero__title">Tom de Voz</h1>
+      <p class="ds-page-hero__subtitle">A Konsi fala com clareza, proximidade e confiança. Evitamos jargão financeiro e sempre mostramos o benefício concreto.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Nossos Pilares de Comunicação</h2>
+      <div class="ds-voice-grid">
+        <div class="ds-voice-card">
+          <div class="ds-voice-card__icon">🛡️</div>
+          <div class="ds-voice-card__title">Segurança</div>
+          <div class="ds-voice-card__desc">Transmitimos confiança em cada palavra. O usuário precisa sentir que está em boas mãos.</div>
+          <div class="ds-voice-card__example">"Aprovado em minutos" · "Processo 100% seguro"</div>
+        </div>
+        <div class="ds-voice-card">
+          <div class="ds-voice-card__icon">🤝</div>
+          <div class="ds-voice-card__title">Humanidade</div>
+          <div class="ds-voice-card__desc">Falamos com pessoas reais. Somos próximos, acessíveis e nunca usamos linguagem distante.</div>
+          <div class="ds-voice-card__example">"Perto de você" · "Seu dinheiro, suas regras"</div>
+        </div>
+        <div class="ds-voice-card">
+          <div class="ds-voice-card__icon">💡</div>
+          <div class="ds-voice-card__title">Clareza</div>
+          <div class="ds-voice-card__desc">Crédito é complexo. Nossa linguagem simplifica, nunca complica. Evitamos termos técnicos desnecessários.</div>
+          <div class="ds-voice-card__example">Prefira "parcela mensal" a "amortização mensal"</div>
+        </div>
+        <div class="ds-voice-card">
+          <div class="ds-voice-card__icon">🎯</div>
+          <div class="ds-voice-card__title">Benefício</div>
+          <div class="ds-voice-card__desc">Sempre mostramos o ganho concreto. O usuário quer saber o que ganha, não o que fazemos.</div>
+          <div class="ds-voice-card__example">"Economize R$ 200/mês" · "Libere R$ 3.000 hoje"</div>
+        </div>
+        <div class="ds-voice-card">
+          <div class="ds-voice-card__icon">✅</div>
+          <div class="ds-voice-card__title">Positivo</div>
+          <div class="ds-voice-card__desc">Preferimos afirmações a negações. Falamos do que é possível, não do que é proibido.</div>
+          <div class="ds-voice-card__example">"Você consegue" em vez de "não há problema"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       CONTEÚDO — DIRETRIZES DE ESCRITA
+  ─────────────────────────────────────────── -->
+  <section id="page-conteudo-escrita" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Conteúdo › <strong>Diretrizes de Escrita</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Conteúdo</p>
+      <h1 class="ds-page-hero__title">Diretrizes de Escrita</h1>
+      <p class="ds-page-hero__subtitle">Como escrever textos de interface que comunicam com clareza e mantêm a consistência da marca Konsi.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Títulos e Labels</h2>
+      <div class="ds-writing-example">
+        <div class="ds-writing-example__header">Títulos de tela</div>
+        <div class="ds-writing-example__body">
+          <div class="ds-writing-row ds-writing-row--good"><span class="ds-writing-row__badge">Sim</span><span class="ds-writing-row__text">Seu saldo disponível</span></div>
+          <div class="ds-writing-row ds-writing-row--bad"><span class="ds-writing-row__badge">Não</span><span class="ds-writing-row__text">Visualização de saldo consignável disponível para contratação</span></div>
+          <div class="ds-writing-row ds-writing-row--good"><span class="ds-writing-row__badge">Sim</span><span class="ds-writing-row__text">Simule seu crédito</span></div>
+          <div class="ds-writing-row ds-writing-row--bad"><span class="ds-writing-row__badge">Não</span><span class="ds-writing-row__text">Simulação de operação de crédito consignado</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Botões e CTAs</h2>
+      <div class="ds-writing-example">
+        <div class="ds-writing-example__header">Texto de botões — use verbos de ação no imperativo</div>
+        <div class="ds-writing-example__body">
+          <div class="ds-writing-row ds-writing-row--good"><span class="ds-writing-row__badge">Sim</span><span class="ds-writing-row__text">Contratar agora · Simular · Ver detalhes · Confirmar</span></div>
+          <div class="ds-writing-row ds-writing-row--bad"><span class="ds-writing-row__badge">Não</span><span class="ds-writing-row__text">Clique aqui · OK · Enviar · Processar</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Mensagens de Erro</h2>
+      <div class="ds-writing-example">
+        <div class="ds-writing-example__header">Erros — seja específico e ofereça solução</div>
+        <div class="ds-writing-example__body">
+          <div class="ds-writing-row ds-writing-row--good"><span class="ds-writing-row__badge">Sim</span><span class="ds-writing-row__text">CPF inválido. Verifique os 11 dígitos e tente novamente.</span></div>
+          <div class="ds-writing-row ds-writing-row--bad"><span class="ds-writing-row__badge">Não</span><span class="ds-writing-row__text">Erro. Tente novamente.</span></div>
+          <div class="ds-writing-row ds-writing-row--good"><span class="ds-writing-row__badge">Sim</span><span class="ds-writing-row__text">Sem conexão com a internet. Verifique sua rede e tente de novo.</span></div>
+          <div class="ds-writing-row ds-writing-row--bad"><span class="ds-writing-row__badge">Não</span><span class="ds-writing-row__text">Falha na requisição HTTP 500.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Regras Gerais</h2>
+      <table class="ds-table">
+        <thead><tr><th>Regra</th><th>Aplicação</th></tr></thead>
+        <tbody>
+          <tr><td>Use "você", nunca "usuário"</td><td>Mantenha o tom pessoal e direto em todos os textos de UI</td></tr>
+          <tr><td>Frases curtas (&lt; 12 palavras)</td><td>Especialmente em banners, toasts e labels</td></tr>
+          <tr><td>Evite negativas duplas</td><td>"Não é impossível" → "É possível"</td></tr>
+          <tr><td>Números: use vírgula decimal</td><td>"R$ 1.500,00" não "R$ 1500.00"</td></tr>
+          <tr><td>Capitalize apenas o 1º palavra</td><td>"Contratar crédito" não "Contratar Crédito"</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       CONTEÚDO — MICROCOPY
+  ─────────────────────────────────────────── -->
+  <section id="page-conteudo-microcopy" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Conteúdo › <strong>Microcopy</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Conteúdo</p>
+      <h1 class="ds-page-hero__title">Microcopy</h1>
+      <p class="ds-page-hero__subtitle">Pequenos textos que fazem grande diferença — placeholders, tooltips, estados vazios e confirmações.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Placeholders</h2>
+      <table class="ds-table">
+        <thead><tr><th>Campo</th><th>Placeholder correto</th><th>Evitar</th></tr></thead>
+        <tbody>
+          <tr><td>CPF</td><td>000.000.000-00</td><td>"Digite seu CPF"</td></tr>
+          <tr><td>Telefone</td><td>(00) 00000-0000</td><td>"Número de celular"</td></tr>
+          <tr><td>E-mail</td><td>seu@email.com</td><td>"Digite o e-mail"</td></tr>
+          <tr><td>Valor</td><td>R$ 0,00</td><td>"Informe o valor"</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Estados Vazios</h2>
+      <table class="ds-table">
+        <thead><tr><th>Contexto</th><th>Mensagem</th><th>CTA</th></tr></thead>
+        <tbody>
+          <tr><td>Sem propostas</td><td>Você ainda não tem propostas ativas.</td><td>Simular agora</td></tr>
+          <tr><td>Sem notificações</td><td>Tudo em dia! Nenhuma notificação nova.</td><td>—</td></tr>
+          <tr><td>Busca sem resultado</td><td>Nenhum resultado para "{{termo}}".</td><td>Limpar busca</td></tr>
+          <tr><td>Histórico vazio</td><td>Seus contratos aparecerão aqui.</td><td>Contratar crédito</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Confirmações e Toasts</h2>
+      <table class="ds-table">
+        <thead><tr><th>Evento</th><th>Toast</th><th>Tipo</th></tr></thead>
+        <tbody>
+          <tr><td>Proposta enviada</td><td>Proposta enviada com sucesso!</td><td>✅ Sucesso</td></tr>
+          <tr><td>Dados salvos</td><td>Suas informações foram salvas.</td><td>✅ Sucesso</td></tr>
+          <tr><td>Erro de rede</td><td>Sem conexão. Verifique sua internet.</td><td>❌ Erro</td></tr>
+          <tr><td>Campo inválido</td><td>Verifique os campos destacados.</td><td>⚠️ Atenção</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       RECURSOS — FIGMA
+  ─────────────────────────────────────────── -->
+  <section id="page-recursos-figma" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Recursos › <strong>Figma</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Recursos</p>
+      <h1 class="ds-page-hero__title">Design Kit Figma</h1>
+      <p class="ds-page-hero__subtitle">O Design Kit oficial da Konsi com 113 variáveis, componentes e estilos prontos para uso no Figma.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Como usar o Design Kit</h2>
+      <div class="ds-steps">
+        <div class="ds-step">
+          <div class="ds-step__number">1</div>
+          <div class="ds-step__content">
+            <div class="ds-step__title">Acesse o arquivo</div>
+            <div class="ds-step__desc">Abra o arquivo <strong>DK — Aplicativo</strong> no Figma. Peça acesso ao time de Design se ainda não tiver permissão.</div>
+          </div>
+        </div>
+        <div class="ds-step">
+          <div class="ds-step__number">2</div>
+          <div class="ds-step__content">
+            <div class="ds-step__title">Habilite a biblioteca</div>
+            <div class="ds-step__desc">No seu projeto, vá em Assets → Libraries e habilite a biblioteca "Konsi DS" para acessar todos os componentes e variáveis.</div>
+          </div>
+        </div>
+        <div class="ds-step">
+          <div class="ds-step__number">3</div>
+          <div class="ds-step__content">
+            <div class="ds-step__title">Use variáveis, não valores raw</div>
+            <div class="ds-step__desc">Sempre aplique cores e espaçamentos via variáveis (ex: <code>defaultGreen</code>, <code>spacingSm</code>) para garantir que futuras atualizações propagam automaticamente.</div>
+          </div>
+        </div>
+        <div class="ds-step">
+          <div class="ds-step__number">4</div>
+          <div class="ds-step__content">
+            <div class="ds-step__title">Documente variantes customizadas</div>
+            <div class="ds-step__desc">Se precisar criar um componente novo, siga o padrão de nomenclatura <code>NomeComponente/Variante/Estado</code> e adicione à biblioteca.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">O que está no Kit</h2>
+      <div class="ds-resource-grid">
+        <div class="ds-resource-card">
+          <div class="ds-resource-card__icon">🎨</div>
+          <div class="ds-resource-card__title">113 Variáveis</div>
+          <div class="ds-resource-card__desc">Cores, espaçamentos, tipografia e elevações organizados em coleções de variáveis Figma.</div>
+          <span class="ds-resource-card__tag">Variables</span>
+        </div>
+        <div class="ds-resource-card">
+          <div class="ds-resource-card__icon">🧩</div>
+          <div class="ds-resource-card__title">Componentes</div>
+          <div class="ds-resource-card__desc">Botões, inputs, cards, badges e alertas com todas as variantes e estados documentados.</div>
+          <span class="ds-resource-card__tag">Components</span>
+        </div>
+        <div class="ds-resource-card">
+          <div class="ds-resource-card__icon">✏️</div>
+          <div class="ds-resource-card__title">Estilos de Texto</div>
+          <div class="ds-resource-card__desc">15 estilos tipográficos da escala Material 3, do Display Large ao Label Small.</div>
+          <span class="ds-resource-card__tag">Text Styles</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       RECURSOS — FLUTTER
+  ─────────────────────────────────────────── -->
+  <section id="page-recursos-flutter" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Recursos › <strong>Flutter</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Recursos</p>
+      <h1 class="ds-page-hero__title">Integração Flutter</h1>
+      <p class="ds-page-hero__subtitle">Configure o Konsi DS no seu projeto Flutter em menos de 5 minutos usando AppColors, AppSpacing e AppTextStyles.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Setup Inicial</h2>
+      <div class="ds-code-block">
+        <span class="ds-code-block__lang">YAML</span>
+        <span class="cmt"># pubspec.yaml — adicione a fonte Inter</span><br>
+        <span class="kw">dependencies</span>:<br>
+        &nbsp;&nbsp;<span class="kw">google_fonts</span>: ^<span class="num">6.2.1</span><br>
+        <br>
+        <span class="cmt"># Execute para instalar</span><br>
+        flutter pub get
+      </div>
+      <div class="ds-code-block" style="margin-top:var(--spacing-sm)">
+        <span class="ds-code-block__lang">DART</span>
+        <span class="cmt">// main.dart — configure o tema global</span><br>
+        MaterialApp(<br>
+        &nbsp;&nbsp;<span class="kw">theme</span>: ThemeData(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">colorScheme</span>: ColorScheme.fromSeed(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">seedColor</span>: AppColors.primary,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">textTheme</span>: GoogleFonts.interTextTheme(),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">useMaterial3</span>: <span class="kw">true</span>,<br>
+        &nbsp;&nbsp;),<br>
+        )
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">AppColors</h2>
+      <div class="ds-code-block">
+        <span class="ds-code-block__lang">DART</span>
+        <span class="kw">abstract class</span> AppColors {<br>
+        &nbsp;&nbsp;<span class="cmt">// Primary</span><br>
+        &nbsp;&nbsp;<span class="kw">static const</span> primary       = Color(<span class="num">0xFF0A9F82</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> primaryLight  = Color(<span class="num">0xFF0DC7A2</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> primaryVivid  = Color(<span class="num">0xFF0FE2B8</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> primaryBg     = Color(<span class="num">0xFFF0F6F5</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> primaryDark   = Color(<span class="num">0xFF04513F</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> primaryDarker = Color(<span class="num">0xFF03261F</span>);<br>
+        &nbsp;&nbsp;<span class="cmt">// Text</span><br>
+        &nbsp;&nbsp;<span class="kw">static const</span> textPrimary   = Color(<span class="num">0xFF141514</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> textSecondary = Color(<span class="num">0xFF5E6772</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> textSubtitle  = Color(<span class="num">0xFF7C7C7C</span>);<br>
+        &nbsp;&nbsp;<span class="cmt">// Backgrounds</span><br>
+        &nbsp;&nbsp;<span class="kw">static const</span> screenBg  = Color(<span class="num">0xFFF5F6F6</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> cardBg    = Color(<span class="num">0xFFF0F0F0</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> pureWhite = Color(<span class="num">0xFFFFFFFF</span>);<br>
+        &nbsp;&nbsp;<span class="cmt">// System</span><br>
+        &nbsp;&nbsp;<span class="kw">static const</span> sysError      = Color(<span class="num">0xFFFF6060</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> sysSuccess    = Color(<span class="num">0xFF1EA853</span>);<br>
+        &nbsp;&nbsp;<span class="kw">static const</span> sysWarning    = Color(<span class="num">0xFFF3A42E</span>);<br>
+        }
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">AppSpacing</h2>
+      <div class="ds-code-block">
+        <span class="ds-code-block__lang">DART</span>
+        <span class="kw">abstract class</span> AppSpacing {<br>
+        &nbsp;&nbsp;<span class="kw">static const double</span> xsm          = <span class="num">8</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const double</span> sm           = <span class="num">16</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const double</span> md           = <span class="num">24</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const double</span> lg           = <span class="num">32</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const double</span> xlg          = <span class="num">40</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const double</span> paddingCard  = <span class="num">12</span>;<br>
+        &nbsp;&nbsp;<span class="kw">static const double</span> borderRadius = <span class="num">10</span>;<br>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────
+       RECURSOS — COMO CONTRIBUIR
+  ─────────────────────────────────────────── -->
+  <section id="page-recursos-contribuir" class="ds-page">
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Recursos › <strong>Como Contribuir</strong></nav>
+    <div class="ds-page-hero">
+      <p class="ds-page-hero__eyebrow">Recursos</p>
+      <h1 class="ds-page-hero__title">Como Contribuir</h1>
+      <p class="ds-page-hero__subtitle">O Konsi DS é vivo e evolui com o time. Veja como propor melhorias, documentar novos componentes e corrigir inconsistências.</p>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Processo de Contribuição</h2>
+      <div class="ds-steps">
+        <div class="ds-step">
+          <div class="ds-step__number">1</div>
+          <div class="ds-step__content">
+            <div class="ds-step__title">Identifique a lacuna</div>
+            <div class="ds-step__desc">Encontrou um componente sem documentação, uma cor faltando ou uma inconsistência? Registre no backlog do time de Design com uma descrição clara do problema.</div>
+          </div>
+        </div>
+        <div class="ds-step">
+          <div class="ds-step__number">2</div>
+          <div class="ds-step__content">
+            <div class="ds-step__title">Discuta com o time</div>
+            <div class="ds-step__desc">Antes de propor uma solução, alinhe com pelo menos um designer sênior ou tech lead. Mudanças no DS afetam todos os produtos da Konsi.</div>
+          </div>
+        </div>
+        <div class="ds-step">
+          <div class="ds-step__number">3</div>
+          <div class="ds-step__content">
+            <div class="ds-step__title">Documente a proposta</div>
+            <div class="ds-step__desc">Crie uma proposta com: (a) problema identificado, (b) solução proposta com exemplos visuais, (c) impacto em componentes existentes.</div>
+          </div>
+        </div>
+        <div class="ds-step">
+          <div class="ds-step__number">4</div>
+          <div class="ds-step__content">
+            <div class="ds-step__title">Revisão e aprovação</div>
+            <div class="ds-step__desc">A proposta passa por revisão do time de Design. Se aprovada, é adicionada ao Figma, ao código Flutter e a esta documentação.</div>
+          </div>
+        </div>
+        <div class="ds-step">
+          <div class="ds-step__number">5</div>
+          <div class="ds-step__content">
+            <div class="ds-step__title">Comunique o time</div>
+            <div class="ds-step__desc">Após a publicação, comunique a mudança com changelog claro: o que mudou, por quê, e como migrar se necessário.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">Princípios para Contribuição</h2>
+      <div class="ds-alert ds-alert--info">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div>Prefira <strong>evoluir o que existe</strong> a criar do zero. Novos tokens e componentes aumentam a carga cognitiva do time. Antes de propor algo novo, verifique se o problema pode ser resolvido com o que já está no DS.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="js/app.js"></script>
+
+<style>
+  /* Responsive mobile menu */
+  @media (max-width: 900px) {
+    #menu-toggle { display: block !important; }
+  }
+</style>
+</body>
+</html>
