@@ -58,15 +58,9 @@
       item.classList.toggle('active', item.dataset.section === sectionId);
     });
 
-    // Show/hide sidebar groups
-    const allGroups = document.querySelectorAll('.ds-nav__group[data-section]');
-    allGroups.forEach(group => {
-      if (sectionId === 'home') {
-        // Show all when on home
-        group.classList.remove('hidden');
-      } else {
-        group.classList.toggle('hidden', group.dataset.section !== sectionId);
-      }
+    // Keep all sidebar groups always visible
+    document.querySelectorAll('.ds-nav__group[data-section]').forEach(group => {
+      group.classList.remove('hidden');
     });
 
     // Navigate to the first page of section if requested

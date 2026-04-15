@@ -274,6 +274,23 @@ body {
   min-height: 100vh;
 }
 
+.ds-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: var(--spacing-lg) var(--spacing-md);
+  border-top: 1px solid var(--color-default-gray);
+  font-size: 0.78rem;
+  color: var(--color-subtitle-gray);
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.ds-footer__divider {
+  opacity: 0.4;
+}
+
 .ds-page {
   display: none;
   max-width: var(--content-max-width);
@@ -788,7 +805,7 @@ body {
   justify-content: center;
   gap: 8px;
   padding: 12px 24px;
-  border-radius: 10px;
+  border-radius: 30px;
   font-family: var(--font-family);
   font-size: 0.875rem;
   font-weight: 600;
@@ -828,8 +845,84 @@ body {
 }
 .kds-btn--danger:hover { background: var(--sys-error-2); }
 
-.kds-btn--sm { padding: 8px 16px; font-size: 0.8rem; border-radius: 8px; }
-.kds-btn--lg { padding: 16px 32px; font-size: 1rem; border-radius: 12px; }
+.kds-btn--sm { padding: 8px 16px; font-size: 0.8rem; border-radius: 24px; }
+.kds-btn--lg { padding: 16px 32px; font-size: 1rem; border-radius: 36px; }
+
+/* CTA — full-width, altura 56px (specs Figma) */
+.kds-btn--cta {
+  width: 100%;
+  height: 56px;
+  font-size: 1rem;
+  border-radius: 30px;
+  box-shadow: 0px 4px 5px rgba(0,0,0,0.14),
+              0px 1px 10px rgba(0,0,0,0.12),
+              0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.ds-component-preview--column {
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 400px;
+}
+
+/* ══════════════════════════════════════════
+   FAB — Floating Action Button
+══════════════════════════════════════════ */
+.kds-fab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0px 4px 5px rgba(0,0,0,0.14),
+              0px 1px 10px rgba(0,0,0,0.12),
+              0px 2px 4px rgba(0,0,0,0.20);
+  flex-shrink: 0;
+}
+.kds-fab:hover, .kds-fab--hover {
+  background: var(--gk-600);
+  box-shadow: 0px 8px 10px rgba(0,0,0,0.14),
+              0px 3px 14px rgba(0,0,0,0.12),
+              0px 4px 5px rgba(0,0,0,0.20);
+}
+.kds-fab:disabled {
+  background: var(--color-disabled);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.kds-fab--sm {
+  width: 56px;
+  height: 56px;
+}
+.kds-fab--extended {
+  width: auto;
+  height: 70px;
+  border-radius: 30px;
+  padding: 0 20px;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.ds-fab-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.ds-fab-demo__label {
+  font-size: 0.72rem;
+  color: var(--color-subtitle-gray);
+  font-weight: 500;
+}
 
 .kds-btn:disabled {
   background: var(--color-disabled) !important;
@@ -840,62 +933,147 @@ body {
 }
 
 /* ══════════════════════════════════════════
-   INPUTS (component)
+   INPUTS (component) — specs Figma
+   height 56dp · border-radius 8dp · font 16sp
+   padding 16dp lateral · 8dp vertical
 ══════════════════════════════════════════ */
-.kds-input-group {
+
+/* ── Outlined text field (Material Design Outlined) ─── */
+.kds-field {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-bottom: var(--spacing-sm);
+  gap: 4px;
 }
 
-.kds-label {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-dark-gray);
+.kds-field__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 8px; /* espaço para a label flutuar acima da borda */
 }
 
-.kds-label--required::after {
-  content: ' *';
-  color: var(--sys-error);
-}
-
-.kds-input {
+.kds-field__input {
   font-family: var(--font-family);
-  font-size: 0.875rem;
-  padding: 12px 14px;
-  border: 1.5px solid var(--color-default-gray);
-  border-radius: 10px;
+  font-size: 1rem;           /* 16sp */
   color: var(--color-dark-gray);
   background: var(--color-white);
-  transition: border-color 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--color-default-gray);
+  border-radius: 8px;        /* 8dp */
+  height: 56px;              /* 56dp */
+  padding: 0 16px;           /* padding simétrico — label fica fora */
+  width: 100%;
   outline: none;
+  transition: border-color 0.2s, border-width 0.1s;
+  box-sizing: border-box;
 }
 
-.kds-input:focus {
+.kds-field__input:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(10,159,130,0.12);
+  border-width: 2px;
 }
 
-.kds-input.error {
+.kds-field__input.kds-field__input--error {
   border-color: var(--sys-error);
+  border-width: 2px;
 }
 
-.kds-input.error:focus {
-  box-shadow: 0 0 0 3px rgba(255,96,96,0.12);
-}
-
-.kds-input:disabled {
-  background: var(--color-default-white);
+.kds-field__input:disabled {
+  background: #F5F5F5;
   color: var(--color-disabled);
   cursor: not-allowed;
 }
 
-.kds-helper {
-  font-size: 0.75rem;
-  color: var(--color-subtitle-gray);
+/* Label — repouso: dentro do campo como placeholder */
+.kds-field__label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;           /* 16sp no repouso */
+  color: var(--color-default-gray-2);
+  pointer-events: none;
+  transition: top 0.15s ease, font-size 0.15s ease, color 0.15s ease, background 0.15s ease;
+  background: transparent;
+  padding: 0 4px;
+  line-height: 1;
 }
 
+/* Label sobe para cima da borda (outlined) */
+.kds-field__input:focus ~ .kds-field__label,
+.kds-field__input:not(:placeholder-shown) ~ .kds-field__label {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 0.75rem;        /* 12sp flutuando */
+  color: var(--color-primary);
+  background: var(--color-white);
+}
+
+.kds-field__input.kds-field__input--error:focus ~ .kds-field__label,
+.kds-field__input.kds-field__input--error:not(:placeholder-shown) ~ .kds-field__label {
+  color: var(--sys-error);
+  background: var(--color-white);
+}
+
+/* Static states (para mostrar no DS sem interação) */
+.kds-field--filled .kds-field__label,
+.kds-field--focused .kds-field__label {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  background: var(--color-white);
+}
+.kds-field--focused .kds-field__label  { color: var(--color-primary); }
+.kds-field--focused .kds-field__input  { border-color: var(--color-primary); border-width: 2px; }
+.kds-field--hovered .kds-field__input  { border-color: var(--bg-500); }
+.kds-field--error .kds-field__label    { top: 0; transform: translateY(-50%); font-size: 0.75rem; color: var(--sys-error); background: var(--color-white); }
+.kds-field--error .kds-field__input    { border-color: var(--sys-error); border-width: 2px; }
+.kds-field--disabled .kds-field__input { background: #F5F5F5; color: var(--color-disabled); }
+.kds-field--disabled .kds-field__label { color: var(--color-disabled); }
+
+/* Supporting text */
+.kds-field__support {
+  font-size: 0.75rem;        /* 12sp */
+  color: var(--color-subtitle-gray);
+  padding-left: 2px;
+}
+.kds-field--error .kds-field__support  { color: var(--sys-error-2); }
+.kds-field--focused .kds-field__support { color: var(--color-primary); }
+
+/* Icons */
+.kds-field__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  color: var(--color-default-gray-2);
+  pointer-events: none;
+}
+.kds-field__icon--lead  { left: 16px; }
+.kds-field__icon--trail { right: 16px; }
+.kds-field--error .kds-field__icon--trail { color: var(--sys-error); }
+.kds-field--focused .kds-field__icon--trail { color: var(--color-primary); }
+
+.kds-field__input--with-lead  { padding-left: 44px; }
+.kds-field__input--with-trail { padding-right: 44px; }
+
+/* Form group */
+.kds-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Legacy — mantido para retrocompatibilidade */
+.kds-input-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: var(--spacing-sm); }
+.kds-label { font-size: 0.8rem; font-weight: 600; color: var(--color-dark-gray); }
+.kds-label--required::after { content: ' *'; color: var(--sys-error); }
+.kds-input { font-family: var(--font-family); font-size: 1rem; padding: 8px 16px; border: 1px solid var(--color-default-gray); border-radius: 8px; color: var(--color-dark-gray); background: var(--color-white); height: 56px; outline: none; transition: border-color 0.2s; box-sizing: border-box; width: 100%; }
+.kds-input:focus { border-color: var(--color-primary); border-width: 2px; }
+.kds-input.error { border-color: var(--sys-error); border-width: 2px; }
+.kds-input:disabled { background: var(--color-default-white); color: var(--color-disabled); cursor: not-allowed; }
+.kds-helper { font-size: 0.75rem; color: var(--color-subtitle-gray); }
 .kds-helper.error { color: var(--sys-error-2); }
 
 /* ══════════════════════════════════════════
@@ -1101,18 +1279,7 @@ body {
    TOP NAVIGATION
 ══════════════════════════════════════════ */
 .ds-topnav {
-  position: fixed;
-  top: var(--header-height);
-  left: 0;
-  right: 0;
-  height: 44px;
-  background: var(--color-white);
-  border-bottom: 1px solid var(--color-default-gray);
-  display: flex;
-  align-items: stretch;
-  padding: 0 0 0 var(--sidebar-width);
-  z-index: 95;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  display: none;
 }
 
 .ds-topnav__items {
@@ -1148,14 +1315,13 @@ body {
   font-weight: 600;
 }
 
-/* Adjust sidebar and main when topnav is visible */
 .ds-sidebar {
-  top: calc(var(--header-height) + 44px);
-  height: calc(100vh - var(--header-height) - 44px);
+  top: var(--header-height);
+  height: calc(100vh - var(--header-height));
 }
 
 .ds-main {
-  padding-top: calc(var(--header-height) + 44px);
+  padding-top: var(--header-height);
 }
 
 /* Sidebar section groups hidden by default when filtering */
@@ -1376,54 +1542,66 @@ body {
 /* ══════════════════════════════════════════
    BRAND SECTION
 ══════════════════════════════════════════ */
+.ds-subsection__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-dark-gray);
+  margin: var(--spacing-md) 0 var(--spacing-sm);
+}
+
 .ds-logo-showcase {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
 }
+.ds-logo-showcase--icons    { grid-template-columns: repeat(5, 1fr); }
+.ds-logo-showcase--wordmarks { grid-template-columns: repeat(2, 1fr); }
 
 .ds-logo-tile {
   border-radius: 12px;
-  padding: 36px 24px;
+  padding: 32px 20px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  min-height: 140px;
+  gap: 10px;
+  min-height: 160px;
   border: 1px solid var(--color-default-gray);
 }
 
-.ds-logo-tile--light { background: var(--color-white); }
-.ds-logo-tile--green { background: var(--color-primary); }
-.ds-logo-tile--dark  { background: var(--color-primary-darker); }
-
-.ds-logo-mark {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  font-weight: 900;
-  font-family: var(--font-family);
+.ds-logo-tile--light       { background: var(--color-white); }
+.ds-logo-tile--dark        { background: var(--color-primary-darker); }
+.ds-logo-tile--checkered   {
+  background-color: #e0e0e0;
+  background-image:
+    linear-gradient(45deg, #bbb 25%, transparent 25%),
+    linear-gradient(-45deg, #bbb 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #bbb 75%),
+    linear-gradient(-45deg, transparent 75%, #bbb 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
 }
 
-.ds-logo-mark--primary { background: var(--color-primary); color: white; }
-.ds-logo-mark--white   { background: white; color: var(--color-primary); }
-.ds-logo-mark--vivid   { background: var(--gk-300); color: var(--color-primary-darker); }
+.ds-logo-asset--icon     { width: 80px; height: 80px; border-radius: 18px; display: block; }
+.ds-logo-asset--wordmark { width: 100%; max-width: 280px; height: auto; display: block; }
 
 .ds-logo-tile__label {
   font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
+}
+.ds-logo-tile__file {
+  font-size: 0.68rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(0,0,0,0.05);
+  color: var(--color-subtitle-gray);
 }
 
-.ds-logo-tile--light .ds-logo-tile__label { color: var(--color-subtitle-gray); }
-.ds-logo-tile--green .ds-logo-tile__label { color: rgba(255,255,255,0.8); }
-.ds-logo-tile--dark  .ds-logo-tile__label { color: rgba(255,255,255,0.6); }
+.ds-logo-tile--light .ds-logo-tile__label       { color: var(--color-subtitle-gray); }
+.ds-logo-tile--dark  .ds-logo-tile__label       { color: rgba(255,255,255,0.8); }
+.ds-logo-tile--checkered .ds-logo-tile__label   { color: var(--color-subtitle-gray); }
+.ds-logo-tile--dark .ds-logo-tile__file         { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
 
 /* Do/Don't grid */
 .ds-dodont-brand {
