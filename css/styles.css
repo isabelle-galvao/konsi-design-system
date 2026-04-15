@@ -47,22 +47,32 @@
   --sys-warning-2:  #C87D0F;
   --sys-warning-bg: #FEF9EC;
 
-  /* === TOKENS: Semantic === */
-  --color-primary:         #0A9F82;
-  --color-primary-light:   #0DC7A2;
-  --color-primary-vivid:   #0FE2B8;
-  --color-primary-bg:      #F0F6F5;
-  --color-primary-dark:    #04513F;
-  --color-primary-darker:  #03261F;
-  --color-dark-gray:       #141514;
-  --color-default-gray-2:  #5E6772;
-  --color-subtitle-gray:   #7C7C7C;
-  --color-card-bg:         #F0F0F0;
-  --color-white:           #FFFFFF;
-  --color-disabled:        #BDBDBD;
-  --color-default-gray:    #CECFCD;
-  --color-default-white:   #E8E8E8;
-  --color-screen-bg:       #F5F6F6;
+  /* === TOKENS: Semantic — nomenclatura Figma (color/brand/, color/text/, color/background/, color/border/) === */
+
+  /* color/brand/ */
+  --color-primary:              #0A9F82; /* defaultGreen · color/brand/primary */
+  --color-primary-light:        #0DC7A2; /* mainColor1  · color/brand/primaryLight */
+  --color-primary-vivid:        #0FE2B8; /* mainColor2  · color/brand/primaryVivid */
+  --color-primary-bg:           #F0F6F5; /* mainColor3  · color/brand/primaryBg */
+  --color-primary-dark:         #04513F; /* darkGreen   · color/brand/primaryDark */
+  --color-primary-darker:       #03261F; /* darkerGreen · color/brand/primaryDarker */
+
+  /* color/text/ */
+  --color-dark-gray:            #141514; /* darkGray     · color/text/primary */
+  --color-default-gray-2:       #5E6772; /* defaultGray2 · color/text/secondary */
+  --color-subtitle-gray:        #7C7C7C; /* subtitleGray · color/text/subtitle */
+  --color-disabled:             #BDBDBD; /* disabled     · color/text/disabled */
+
+  /* color/background/ */
+  --color-screen-bg:            #F5F6F6; /* screenBg        · color/background/screen */
+  --color-white:                #FFFFFF; /* pureWhite       · color/background/surface */
+  --color-card-bg:              #F0F0F0; /* cardBg          · color/background/card */
+  --color-selected-card-bg:     #FBFBFB; /* selectedCardBg  · grayscale/selectedCardBg — NOVO */
+  --color-card-alt:             #E8E8E8; /* cardBG2         · color/background/cardAlt — NOVO */
+
+  /* color/border/ */
+  --color-default-gray:         #CECFCD; /* defaultGray  · color/border/default */
+  --color-default-white:        #E8E8E8; /* defaultWhite · color/border/subtle */
 
   /* === TOKENS: Spacing === */
   --spacing-xsm: 8px;
@@ -125,12 +135,9 @@ body {
 .ds-header__logo-icon {
   width: 36px;
   height: 36px;
-  background: var(--color-primary);
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
+  display: block;
+  flex-shrink: 0;
 }
 
 .ds-header__divider {

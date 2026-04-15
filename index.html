@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Konsi Design System</title>
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A9F82'/><text y='24' x='6' font-size='20'>K</text></svg>" />
+  <link rel="icon" href="assets/brand/icon/konsi-icon-green-dark.svg" type="image/svg+xml" />
 </head>
 <body>
 
@@ -15,7 +15,7 @@
 <header class="ds-header">
   <button id="menu-toggle" style="display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:4px 8px;" aria-label="Menu">☰</button>
   <a class="ds-header__logo" href="#" data-goto="home">
-    <div class="ds-header__logo-icon">K</div>
+    <img class="ds-header__logo-icon" src="assets/brand/icon/konsi-icon-green-dark.svg" alt="Konsi" />
     <span>Konsi DS</span>
   </a>
   <div class="ds-header__divider"></div>
@@ -416,23 +416,26 @@
     <!-- Cores Semânticas -->
     <div class="ds-section">
       <h2 class="ds-section__title">🏷️ Cores Semânticas (aliases)</h2>
-      <p class="ds-section__subtitle">Aliases que mapeiam as paletas brutas para uso no app Flutter.</p>
+      <p class="ds-section__subtitle">Aliases que mapeiam as paletas brutas para uso no app Flutter. Use sempre os aliases — nunca os tokens raw.</p>
       <table class="ds-table">
-        <thead><tr><th>Token</th><th>Alias de</th><th>Hex</th><th>Uso</th></tr></thead>
+        <thead>
+          <tr><th>Token</th><th>Alias de</th><th>Hex</th><th>Uso</th></tr>
+        </thead>
         <tbody>
-          <tr><td><code>defaultGreen</code></td><td>greenKonsi/500</td><td><code>#0A9F82</code></td><td>CTA principal, botão primário</td></tr>
-          <tr><td><code>mainColor1</code></td><td>greenKonsi/400</td><td><code>#0DC7A2</code></td><td>Hover state, ícones ativos</td></tr>
-          <tr><td><code>mainColor2</code></td><td>greenKonsi/300</td><td><code>#0FE2B8</code></td><td>Destaque, gradiente</td></tr>
-          <tr><td><code>mainColor3</code></td><td>greenKonsi/100</td><td><code>#F0F6F5</code></td><td>Fundo de chips, fundo selecionado</td></tr>
-          <tr><td><code>darkGreen</code></td><td>greenKonsi/800</td><td><code>#04513F</code></td><td>Header, textos sobre fundo verde</td></tr>
-          <tr><td><code>darkerGreen</code></td><td>greenKonsi/900</td><td><code>#03261F</code></td><td>Sidebar, nav dark</td></tr>
-          <tr><td><code>darkGray</code></td><td>gray/950</td><td><code>#141514</code></td><td>Texto principal</td></tr>
-          <tr><td><code>defaultGray2</code></td><td>blueGray/500</td><td><code>#5E6772</code></td><td>Texto secundário</td></tr>
-          <tr><td><code>subtitleGray</code></td><td>—</td><td><code>#7C7C7C</code></td><td>Subtítulos, placeholders</td></tr>
-          <tr><td><code>cardBg</code></td><td>—</td><td><code>#F0F0F0</code></td><td>Fundo de cards secundários</td></tr>
-          <tr><td><code>screenBg</code></td><td>blueGray/50</td><td><code>#F5F6F6</code></td><td>Scaffold / background de tela</td></tr>
-          <tr><td><code>pureWhite</code></td><td>—</td><td><code>#FFFFFF</code></td><td>Superfícies, cards principais</td></tr>
-          <tr><td><code>disabled</code></td><td>gray/300</td><td><code>#BDBDBD</code></td><td>Estado desabilitado</td></tr>
+          <tr><td><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#0A9F82;display:inline-block;flex-shrink:0"></span><code>defaultGreen</code></span></td><td>greenKonsi/500</td><td><code>#0A9F82</code></td><td>CTA principal, botão primário</td></tr>
+          <tr><td><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#0DC7A2;display:inline-block;flex-shrink:0"></span><code>mainColor1</code></span></td><td>greenKonsi/400</td><td><code>#0DC7A2</code></td><td>Hover state, ícones ativos</td></tr>
+          <tr><td><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#0FE2B8;display:inline-block;flex-shrink:0"></span><code>mainColor2</code></span></td><td>greenKonsi/300</td><td><code>#0FE2B8</code></td><td>Destaque, gradiente</td></tr>
+          <tr><td><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#F0F6F5;border:1px solid #ddd;display:inline-block;flex-shrink:0"></span><code>mainColor3</code></span></td><td>greenKonsi/100</td><td><code>#F0F6F5</code></td><td>Fundo de chips, fundo selecionado verde</td></tr>
+          <tr><td><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#04513F;display:inline-block;flex-shrink:0"></span><code>darkGreen</code></span></td><td>greenKonsi/800</td><td><code>#04513F</code></td><td>Header, textos sobre fundo verde</td></tr>
+          <tr><td><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#03261F;display:inline-block;flex-shrink:0"></span><code>darkerGreen</code></span></td><td>greenKonsi/900</td><td><code>#03261F</code></td><td>Sidebar, nav dark</td></tr>
+          <tr><td><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#141514;display:inline-block;flex-shrink:0"></span><code>darkGray</code></span></td><td>gray/950</td><td><code>#141514</code></td><td>Texto principal</td></tr>
+          <tr><td><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#5E6772;display:inline-block;flex-shrink:0"></span><code>defaultGray2</code></span></td><td>blueGray/500</td><td><code>#5E6772</code></td><td>Texto secundário</td></tr>
+          <tr><td><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#7C7C7C;display:inline-block;flex-shrink:0"></span><code>subtitleGray</code></span></td><td>—</td><td><code>#7C7C7C</code></td><td>Subtítulos, placeholders</td></tr>
+          <tr><td><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#BDBDBD;display:inline-block;flex-shrink:0"></span><code>disabled</code></span></td><td>gray/300</td><td><code>#BDBDBD</code></td><td>Estado desabilitado</td></tr>
+          <tr><td><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#F0F0F0;border:1px solid #ddd;display:inline-block;flex-shrink:0"></span><code>cardBg</code></span></td><td>—</td><td><code>#F0F0F0</code></td><td>Fundo de cards secundários</td></tr>
+          <tr><td><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#F5F6F6;border:1px solid #ddd;display:inline-block;flex-shrink:0"></span><code>screenBg</code></span></td><td>blueGray/50</td><td><code>#F5F6F6</code></td><td>Scaffold / background de tela</td></tr>
+          <tr><td><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#FFFFFF;border:1px solid #ddd;display:inline-block;flex-shrink:0"></span><code>pureWhite</code></span></td><td>—</td><td><code>#FFFFFF</code></td><td>Superfícies, cards principais</td></tr>
+          <tr><td><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#CECFCD;border:1px solid #ddd;display:inline-block;flex-shrink:0"></span><code>defaultGray</code></span></td><td>—</td><td><code>#CECFCD</code></td><td>Bordas padrão</td></tr>
         </tbody>
       </table>
     </div>
