@@ -831,6 +831,82 @@ body {
 .kds-btn--sm { padding: 8px 16px; font-size: 0.8rem; border-radius: 24px; }
 .kds-btn--lg { padding: 16px 32px; font-size: 1rem; border-radius: 36px; }
 
+/* CTA — full-width, altura 56px (specs Figma) */
+.kds-btn--cta {
+  width: 100%;
+  height: 56px;
+  font-size: 1rem;
+  border-radius: 30px;
+  box-shadow: 0px 4px 5px rgba(0,0,0,0.14),
+              0px 1px 10px rgba(0,0,0,0.12),
+              0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.ds-component-preview--column {
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 400px;
+}
+
+/* ══════════════════════════════════════════
+   FAB — Floating Action Button
+══════════════════════════════════════════ */
+.kds-fab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0px 4px 5px rgba(0,0,0,0.14),
+              0px 1px 10px rgba(0,0,0,0.12),
+              0px 2px 4px rgba(0,0,0,0.20);
+  flex-shrink: 0;
+}
+.kds-fab:hover, .kds-fab--hover {
+  background: var(--gk-600);
+  box-shadow: 0px 8px 10px rgba(0,0,0,0.14),
+              0px 3px 14px rgba(0,0,0,0.12),
+              0px 4px 5px rgba(0,0,0,0.20);
+}
+.kds-fab:disabled {
+  background: var(--color-disabled);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.kds-fab--sm {
+  width: 40px;
+  height: 40px;
+}
+.kds-fab--extended {
+  width: auto;
+  height: 56px;
+  border-radius: 30px;
+  padding: 0 20px;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.ds-fab-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.ds-fab-demo__label {
+  font-size: 0.72rem;
+  color: var(--color-subtitle-gray);
+  font-weight: 500;
+}
+
 .kds-btn:disabled {
   background: var(--color-disabled) !important;
   border-color: var(--color-disabled) !important;

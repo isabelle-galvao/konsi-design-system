@@ -885,6 +885,111 @@
     </div>
 
     <div class="ds-section">
+      <h2 class="ds-section__title">Botão com Ícone</h2>
+      <p class="ds-section__subtitle">Ícone reforça o significado da ação. Use sempre alinhado ao texto — nunca como decoração isolada.</p>
+
+      <h3 class="ds-subsection__title">Posição do ícone</h3>
+      <div class="ds-component-preview">
+        <button class="kds-btn kds-btn--primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Ícone esquerda
+        </button>
+        <button class="kds-btn kds-btn--primary">
+          Ícone direita
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button class="kds-btn kds-btn--secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download
+        </button>
+        <button class="kds-btn kds-btn--ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Adicionar
+        </button>
+      </div>
+
+      <h3 class="ds-subsection__title">CTA com ícone (full-width)</h3>
+      <div class="ds-component-preview ds-component-preview--column">
+        <button class="kds-btn kds-btn--primary kds-btn--cta">
+          Simular Empréstimo
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button class="kds-btn kds-btn--secondary kds-btn--cta">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Baixar Contrato
+        </button>
+      </div>
+
+      <table class="ds-table" style="margin-top:var(--spacing-md)">
+        <thead><tr><th>Variante</th><th>Posição do ícone</th><th>Tamanho do ícone</th><th>Gap</th></tr></thead>
+        <tbody>
+          <tr><td><code>sm</code></td><td>Esquerda ou direita</td><td>16px</td><td>6px</td></tr>
+          <tr><td><code>md</code> (padrão)</td><td>Esquerda ou direita</td><td>18px</td><td>8px</td></tr>
+          <tr><td><code>lg</code> / CTA</td><td>Esquerda ou direita</td><td>20–22px</td><td>10px</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ds-section">
+      <h2 class="ds-section__title">FAB — Floating Action Button</h2>
+      <p class="ds-section__subtitle">Ação primária global da tela. Sempre flutuante, sempre visível, sempre um único ícone. Corresponde ao <code>FloatingActionButton</code> do Flutter.</p>
+
+      <h3 class="ds-subsection__title">Tamanhos</h3>
+      <div class="ds-component-preview">
+        <div class="ds-fab-demo">
+          <button class="kds-fab kds-fab--sm" aria-label="Adicionar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <span class="ds-fab-demo__label">Small · 40px</span>
+        </div>
+        <div class="ds-fab-demo">
+          <button class="kds-fab" aria-label="Adicionar">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <span class="ds-fab-demo__label">Regular · 56px</span>
+        </div>
+        <div class="ds-fab-demo">
+          <button class="kds-fab kds-fab--extended" aria-label="Nova simulação">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Nova simulação
+          </button>
+          <span class="ds-fab-demo__label">Extended · 56px</span>
+        </div>
+      </div>
+
+      <h3 class="ds-subsection__title">Estados</h3>
+      <div class="ds-component-preview">
+        <div class="ds-fab-demo">
+          <button class="kds-fab" aria-label="Default">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <span class="ds-fab-demo__label">Default</span>
+        </div>
+        <div class="ds-fab-demo">
+          <button class="kds-fab kds-fab--hover" aria-label="Hover">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <span class="ds-fab-demo__label">Hover</span>
+        </div>
+        <div class="ds-fab-demo">
+          <button class="kds-fab" disabled aria-label="Disabled">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <span class="ds-fab-demo__label">Disabled</span>
+        </div>
+      </div>
+
+      <table class="ds-table">
+        <thead><tr><th>Variante</th><th>Tamanho</th><th>Border Radius</th><th>Flutter</th></tr></thead>
+        <tbody>
+          <tr><td>Small FAB</td><td>40×40px</td><td>50%</td><td><code>FloatingActionButton.small</code></td></tr>
+          <tr><td>FAB</td><td>56×56px</td><td>50%</td><td><code>FloatingActionButton</code></td></tr>
+          <tr><td>Extended FAB</td><td>56px altura</td><td>30px (pill)</td><td><code>FloatingActionButton.extended</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ds-section">
       <h2 class="ds-section__title">Do &amp; Don't</h2>
       <div class="ds-dodont">
         <div class="ds-dodont__card ds-dodont__card--do">
