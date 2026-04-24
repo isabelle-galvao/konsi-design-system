@@ -49,6 +49,67 @@
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
     history.pushState({ page: pageId }, '', '#' + pageId);
+
+    buildToc(pageId);
+  }
+
+  // ── TOC helpers ──────────────────────────────────────────
+  function slugify(text) {
+    return text.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-').trim();
+  }
+
+  let tocObserver = null;
+
+  function buildToc(pageId) {
+    const tocEl   = document.getElementById('ds-toc');
+    const tocList = document.getElementById('ds-toc-list');
+    if (!tocEl || !tocList) return;
+
+    if (tocObserver) { tocObserver.disconnect(); tocObserver = null; }
+
+    const page = document.getElementById('page-' + pageId);
+    if (!page) {
+      tocEl.classList.remove('visible');
+      document.body.classList.remove('has-toc');
+      return;
+    }
+
+    const headings = [...page.querySelectorAll('h2')];
+    if (headings.length < 3) {
+      tocEl.classList.remove('visible');
+      document.body.classList.remove('has-toc');
+      return;
+    }
+
+    tocList.innerHTML = '';
+    headings.forEach(h => {
+      if (!h.id) h.id = 'toc-' + slugify(h.textContent);
+      const li = document.createElement('li');
+      const a  = document.createElement('a');
+      a.className   = 'ds-toc__link';
+      a.textContent = h.textContent;
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => window.scrollBy(0, -90), 150);
+      });
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+
+    tocEl.classList.add('visible');
+    document.body.classList.add('has-toc');
+
+    const links = [...tocList.querySelectorAll('.ds-toc__link')];
+    tocObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          links[headings.indexOf(entry.target)]?.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
+    headings.forEach(h => tocObserver.observe(h));
   }
 
   // ── Activate a top-nav section (show/hide sidebar groups) ──
@@ -136,6 +197,79 @@
       toastEl.style.transform = 'translateY(8px)';
       setTimeout(() => toastEl && toastEl.remove(), 300);
     }, 2000);
+  }
+
+  // ── Search ──────────────────────────────────────────────
+  const searchBox     = document.getElementById('ds-search-box');
+  const searchInput   = document.querySelector('.ds-header__search-input');
+  const searchResults = document.getElementById('ds-search-results');
+
+  if (searchInput && searchResults) {
+    const SECTION_LABEL = {
+      home: 'Início', fundamentos: 'Fundamentos', componentes: 'Componentes',
+      brand: 'Brand', conteudo: 'Conteúdo', recursos: 'Recursos',
+    };
+
+    const index = [...document.querySelectorAll('.ds-nav__item[data-page]')]
+      .filter(el => el.dataset.page !== 'home')
+      .map(el => ({
+        pageId:       el.dataset.page,
+        label:        el.textContent.trim(),
+        sectionLabel: SECTION_LABEL[PAGE_SECTION[el.dataset.page]] || '',
+      }));
+
+    let focusedIdx = -1;
+
+    function renderResults(items) {
+      searchResults.innerHTML = '';
+      focusedIdx = -1;
+      if (!items.length) { searchResults.hidden = true; return; }
+      items.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'ds-search-result';
+        div.innerHTML =
+          `<span class="ds-search-result__label">${item.label}</span>` +
+          `<span class="ds-search-result__section">${item.sectionLabel}</span>`;
+        div.addEventListener('mousedown', e => {
+          e.preventDefault();
+          closeSearch();
+          navigate(item.pageId);
+        });
+        searchResults.appendChild(div);
+      });
+      searchResults.hidden = false;
+    }
+
+    function closeSearch() {
+      searchResults.hidden = true;
+      searchInput.value = '';
+      focusedIdx = -1;
+    }
+
+    function setFocus(idx) {
+      const items = [...searchResults.querySelectorAll('.ds-search-result')];
+      focusedIdx = Math.max(0, Math.min(idx, items.length - 1));
+      items.forEach((el, i) => el.classList.toggle('focused', i === focusedIdx));
+    }
+
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim().toLowerCase();
+      if (!q) { searchResults.hidden = true; return; }
+      renderResults(index.filter(item =>
+        item.label.toLowerCase().includes(q) || item.sectionLabel.toLowerCase().includes(q)
+      ));
+    });
+
+    searchInput.addEventListener('keydown', e => {
+      const items = [...searchResults.querySelectorAll('.ds-search-result')];
+      if (e.key === 'ArrowDown')  { e.preventDefault(); setFocus(focusedIdx + 1); }
+      else if (e.key === 'ArrowUp')   { e.preventDefault(); setFocus(focusedIdx - 1); }
+      else if (e.key === 'Enter' && focusedIdx >= 0) { items[focusedIdx]?.dispatchEvent(new MouseEvent('mousedown')); }
+      else if (e.key === 'Escape') { closeSearch(); searchInput.blur(); }
+    });
+
+    searchInput.addEventListener('blur', () => setTimeout(closeSearch, 150));
+    searchBox.addEventListener('click', () => searchInput.focus());
   }
 
   // ── Mobile sidebar toggle ────────────────────────────────
