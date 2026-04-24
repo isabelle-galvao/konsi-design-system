@@ -1450,11 +1450,14 @@ span.ds-nav__item-icon {
   border-left-color: var(--color-primary);
 }
 
-@media (min-width: 1320px) {
+@media (min-width: 1280px) {
   .ds-toc.visible { display: block; }
+  body.has-toc .ds-main {
+    padding-right: calc(var(--toc-width) + 48px);
+  }
   body.has-toc .ds-page {
-    max-width: 760px;
-    margin: 0 calc(var(--toc-width) + 40px) 0 40px;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
   }
 }
 

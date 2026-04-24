@@ -90,8 +90,8 @@
       a.textContent = h.textContent;
       a.addEventListener('click', e => {
         e.preventDefault();
-        h.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setTimeout(() => window.scrollBy(0, -90), 150);
+        const top = h.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
       });
       li.appendChild(a);
       tocList.appendChild(li);
