@@ -1446,49 +1446,185 @@
        COMPONENTE: FEEDBACK
   ─────────────────────────────────────────── -->
   <section id="page-comp-feedback" class="ds-page">
-    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Componentes › <strong>Feedback</strong></nav>
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Componentes › <strong>Feedback &amp; Alertas</strong></nav>
     <div class="ds-page-hero">
       <p class="ds-page-hero__eyebrow">Componentes</p>
       <h1 class="ds-page-hero__title">Feedback &amp; Alertas</h1>
-      <p class="ds-page-hero__subtitle">Toasts, banners e alertas inline para comunicar o resultado de ações ao usuário.</p>
+      <p class="ds-page-hero__subtitle">SnackBars contextuais para comunicar o resultado de ações ao usuário — com variantes de atenção, erro e sucesso.</p>
     </div>
 
+    <!-- ── Propriedades ── -->
     <div class="ds-section">
-      <h2 class="ds-section__title">Toasts / Snackbars</h2>
+      <h2 class="ds-section__title">Propriedades</h2>
+      <p class="ds-section__subtitle">O SnackBar possui três props que combinam para gerar 9 variantes.</p>
+      <table class="ds-table">
+        <thead>
+          <tr><th>Prop</th><th>Valores</th><th>Descrição</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>style</code></td><td><code>Atention</code> · <code>Error</code> · <code>Success</code></td><td>Define a cor de fundo e o ícone semântico</td></tr>
+          <tr><td><code>icon</code></td><td><code>true</code> · <code>false</code></td><td>Exibe ou oculta o ícone à esquerda</td></tr>
+          <tr><td><code>action</code></td><td><code>true</code> · <code>false</code></td><td>Exibe ou oculta o botão de ação à direita</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── Variante 1: ícone + ação ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Com ícone e ação</h2>
+      <p class="ds-section__subtitle"><code>icon=true</code> · <code>action=true</code></p>
       <div class="ds-component-preview" style="flex-direction:column;align-items:flex-start;gap:12px">
-        <div class="kds-toast kds-toast--success">
-          <span style="font-size:1.1rem;flex-shrink:0">✅</span>
-          <div><strong>Contrato assinado!</strong><br>Seu empréstimo foi aprovado e será creditado em até 1 dia útil.</div>
+
+        <!-- Atention -->
+        <div class="kds-snackbar">
+          <span class="kds-snackbar__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#F3A42E"/><path d="M12 7v5.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1" fill="#fff"/></svg>
+          </span>
+          <span class="kds-snackbar__text">Você tem operações incompletas</span>
+          <button class="kds-snackbar__action">Completar</button>
         </div>
-        <div class="kds-toast kds-toast--error">
-          <span style="font-size:1.1rem;flex-shrink:0">❌</span>
-          <div><strong>Erro na consulta</strong><br>Não foi possível consultar o INSS. Tente novamente.</div>
+
+        <!-- Error -->
+        <div class="kds-snackbar kds-snackbar--error">
+          <span class="kds-snackbar__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#FF6060"/><path d="M12 7v5.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1" fill="#fff"/></svg>
+          </span>
+          <span class="kds-snackbar__text">Selecione o número de parcelas desejadas.</span>
+          <button class="kds-snackbar__action kds-snackbar__action--error">Selecionar</button>
         </div>
-        <div class="kds-toast kds-toast--warning">
-          <span style="font-size:1.1rem;flex-shrink:0">⚠️</span>
-          <div><strong>Margem insuficiente</strong><br>O valor solicitado excede sua margem disponível.</div>
-        </div>
-        <div class="kds-toast kds-toast--info">
-          <span style="font-size:1.1rem;flex-shrink:0">ℹ️</span>
-          <div><strong>Proposta em análise</strong><br>Você receberá uma notificação assim que for aprovada.</div>
+
+        <!-- Success -->
+        <div class="kds-snackbar kds-snackbar--success">
+          <span class="kds-snackbar__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#1EA853"/><path d="M7.5 12l3 3 5.5-5.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="kds-snackbar__text">Você tem operações incompletas</span>
+          <button class="kds-snackbar__action">Completar</button>
         </div>
       </div>
     </div>
 
+    <!-- ── Variante 2: ícone, sem ação ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Com ícone, sem ação</h2>
+      <p class="ds-section__subtitle"><code>icon=true</code> · <code>action=false</code></p>
+      <div class="ds-component-preview" style="flex-direction:column;align-items:flex-start;gap:12px">
+
+        <!-- Atention -->
+        <div class="kds-snackbar">
+          <span class="kds-snackbar__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#F3A42E"/><path d="M12 7v5.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1" fill="#fff"/></svg>
+          </span>
+          <span class="kds-snackbar__text">Você tem operações incompletas</span>
+        </div>
+
+        <!-- Error -->
+        <div class="kds-snackbar kds-snackbar--error">
+          <span class="kds-snackbar__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#FF6060"/><path d="M12 7v5.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1" fill="#fff"/></svg>
+          </span>
+          <span class="kds-snackbar__text">Você tem operações incompletas</span>
+        </div>
+
+        <!-- Success -->
+        <div class="kds-snackbar kds-snackbar--success">
+          <span class="kds-snackbar__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#1EA853"/><path d="M7.5 12l3 3 5.5-5.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="kds-snackbar__text">Você tem operações incompletas</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Variante 3: sem ícone, com ação ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Sem ícone, com ação</h2>
+      <p class="ds-section__subtitle"><code>icon=false</code> · <code>action=true</code></p>
+      <div class="ds-component-preview" style="flex-direction:column;align-items:flex-start;gap:12px">
+
+        <!-- Atention -->
+        <div class="kds-snackbar">
+          <span class="kds-snackbar__text">Você tem operações incompletas</span>
+          <button class="kds-snackbar__action">Completar</button>
+        </div>
+
+        <!-- Error -->
+        <div class="kds-snackbar kds-snackbar--error">
+          <span class="kds-snackbar__text">Você tem operações incompletas</span>
+          <button class="kds-snackbar__action kds-snackbar__action--error">Completar</button>
+        </div>
+
+        <!-- Success -->
+        <div class="kds-snackbar kds-snackbar--success">
+          <span class="kds-snackbar__text">Você tem operações incompletas</span>
+          <button class="kds-snackbar__action">Completar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Design Tokens ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Design Tokens</h2>
+      <table class="ds-table">
+        <thead><tr><th>Token</th><th>Valor</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td><code>--color-selected-card-bg</code></td><td>#FBFBFB</td><td>Fundo padrão (Atention)</td></tr>
+          <tr><td><code>--sys-error-bg</code></td><td>#FFF1F1</td><td>Fundo Error</td></tr>
+          <tr><td><code>--sys-success-bg</code></td><td>#DDFBE7</td><td>Fundo Success</td></tr>
+          <tr><td><code>--color-dark-gray</code></td><td>#141514</td><td>Cor do texto</td></tr>
+          <tr><td><code>--color-primary</code></td><td>#0A9F82</td><td>Cor do botão de ação padrão</td></tr>
+          <tr><td><code>--sys-error</code></td><td>#FF6060</td><td>Cor do botão de ação Error</td></tr>
+          <tr><td><code>--sys-warning</code></td><td>#F3A42E</td><td>Cor do ícone Atention</td></tr>
+          <tr><td><code>--sys-success</code></td><td>#1EA853</td><td>Cor do ícone Success</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── Especificações ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Especificações</h2>
+      <table class="ds-table">
+        <thead><tr><th>Propriedade</th><th>Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Largura</td><td>344px</td></tr>
+          <tr><td>Padding</td><td>16px</td></tr>
+          <tr><td>Border-radius</td><td>4px</td></tr>
+          <tr><td>Sombra</td><td>0 4px 8px rgba(0,0,0,.15) · 0 1px 3px rgba(0,0,0,.30)</td></tr>
+          <tr><td>Ícone</td><td>24×24px</td></tr>
+          <tr><td>Tipografia</td><td>Inter Medium 14px · line-height 20px · tracking 0.1px</td></tr>
+          <tr><td>Botão de ação</td><td>padding 10px 12px · border-radius 100px</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── Código Flutter ── -->
     <div class="ds-section">
       <h2 class="ds-section__title">Código Flutter</h2>
       <div class="ds-code-block">
         <span class="ds-code-block__lang">DART</span>
-        <span class="cmt">// Snackbar de sucesso</span><br>
+        <span class="cmt">// SnackBar de sucesso com ícone e ação</span><br>
         ScaffoldMessenger.of(context).showSnackBar(<br>
         &nbsp;&nbsp;SnackBar(<br>
         &nbsp;&nbsp;&nbsp;&nbsp;backgroundColor: AppColors.sysSuccessBg,<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;content: Text(<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Contrato assinado com sucesso!'</span>,<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style: TextStyle(color: AppColors.sysSuccess2),<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;padding: <span class="kw">const</span> EdgeInsets.all(<span class="num">16</span>),<br>
         &nbsp;&nbsp;&nbsp;&nbsp;shape: RoundedRectangleBorder(<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius: BorderRadius.circular(AppSpacing.borderRadius),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRadius: BorderRadius.circular(<span class="num">4</span>),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;content: Row(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;children: [<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">const</span> Icon(Icons.check_circle, color: AppColors.sysSuccess, size: <span class="num">24</span>),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">const</span> SizedBox(width: <span class="num">12</span>),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">const</span> Expanded(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child: Text(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'Você tem operações incompletas'</span>,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style: TextStyle(color: AppColors.darkGray, fontWeight: FontWeight.w500),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TextButton(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onPressed: () {},<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child: <span class="kw">const</span> Text(<span class="str">'Completar'</span>, style: TextStyle(color: AppColors.defaultGreen)),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
         &nbsp;&nbsp;&nbsp;&nbsp;),<br>
         &nbsp;&nbsp;),<br>
         );
