@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Konsi Design System</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="icon" href="assets/brand/icon/konsi-icon-green-dark.svg" type="image/svg+xml" />
 </head>
 <body>
@@ -21,9 +22,10 @@
   <div class="ds-header__divider"></div>
   <span class="ds-header__title">Design System</span>
   <div class="ds-header__spacer"></div>
-  <div class="ds-header__search">
+  <div class="ds-header__search" id="ds-search-box">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    Buscar…
+    <input class="ds-header__search-input" type="text" placeholder="Buscar…" autocomplete="off" spellcheck="false" />
+    <div class="ds-search-results" id="ds-search-results" hidden></div>
   </div>
   <span class="ds-header__version">v1.0 · Flutter</span>
 </header>
@@ -98,8 +100,8 @@
         Cards
       </a>
       <a class="ds-nav__item" data-page="comp-badges">
-        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        Badges &amp; Tags
+        <span class="material-symbols-rounded ds-nav__item-icon">voting_chip</span>
+        Chips
       </a>
       <a class="ds-nav__item" data-page="comp-feedback">
         <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -1413,32 +1415,458 @@
        COMPONENTE: BADGES
   ─────────────────────────────────────────── -->
   <section id="page-comp-badges" class="ds-page">
-    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Componentes › <strong>Badges</strong></nav>
+    <nav class="ds-breadcrumb"><span data-goto="home" style="cursor:pointer;color:var(--color-primary)">Início</span> › Componentes › <strong>Chips</strong></nav>
     <div class="ds-page-hero">
       <p class="ds-page-hero__eyebrow">Componentes</p>
-      <h1 class="ds-page-hero__title">Badges &amp; Tags</h1>
-      <p class="ds-page-hero__subtitle">Indicadores visuais compactos de status, categoria e estado de contratos e propostas.</p>
+      <h1 class="ds-page-hero__title">Chips</h1>
+      <p class="ds-page-hero__subtitle">6 component sets · 28 variantes. Chips comunicam status, acionam filtros, representam tags e sugerem ações rápidas.</p>
     </div>
 
+    <!-- ── Visão Geral ── -->
     <div class="ds-section">
-      <h2 class="ds-section__title">Variantes</h2>
-      <div class="ds-component-preview">
-        <span class="kds-badge kds-badge--primary">Consignado</span>
-        <span class="kds-badge kds-badge--success">Aprovado</span>
-        <span class="kds-badge kds-badge--error">Negado</span>
-        <span class="kds-badge kds-badge--warning">Em análise</span>
-        <span class="kds-badge kds-badge--neutral">Rascunho</span>
-      </div>
+      <h2 class="ds-section__title">Tipos de Chip</h2>
       <table class="ds-table">
-        <thead><tr><th>Variante</th><th>Fundo</th><th>Texto</th><th>Uso</th></tr></thead>
+        <thead><tr><th>Tipo</th><th>Altura</th><th>Interativo</th><th>Uso</th></tr></thead>
         <tbody>
-          <tr><td><code>primary</code></td><td><code>mainColor3 (#F0F6F5)</code></td><td><code>darkerGreen (#03261F)</code></td><td>Categoria, produto</td></tr>
-          <tr><td><code>success</code></td><td><code>sysSuccessBg</code></td><td><code>sysSuccess2</code></td><td>Aprovado, ativo, pago</td></tr>
-          <tr><td><code>error</code></td><td><code>sysErrorBg</code></td><td><code>sysError2</code></td><td>Negado, expirado, erro</td></tr>
-          <tr><td><code>warning</code></td><td><code>sysWarningBg</code></td><td><code>sysWarning2</code></td><td>Em análise, pendente</td></tr>
-          <tr><td><code>neutral</code></td><td><code>cardBg (#F0F0F0)</code></td><td><code>defaultGray2</code></td><td>Rascunho, inativo</td></tr>
+          <tr><td><code>Chip/Status</code></td><td>28px</td><td>Não</td><td>Indica estado de contrato, proposta ou convênio</td></tr>
+          <tr><td><code>Chip/Filter</code></td><td>32px</td><td>Sim — toggle</td><td>Filtrar convênios, bancos, prazos em listas</td></tr>
+          <tr><td><code>Chip/Suggestion</code></td><td>32px</td><td>Sim — ação única</td><td>Simular, aplicar, confirmar — sem estado persistente</td></tr>
+          <tr><td><code>Chip/Input</code></td><td>32px</td><td>Sim — removível</td><td>Tags criadas pelo usuário em campos de seleção múltipla</td></tr>
+          <tr><td><code>Chip/Size</code></td><td>SM 24 / MD 32 / LG 40</td><td>—</td><td>Variações de densidade conforme o contexto</td></tr>
+          <tr><td><code>Chip/Radius</code></td><td>32px</td><td>—</td><td>Pill (padrão) · Rounded 8dp · Square 4dp</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <!-- ── Chip/Status ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Chip/Status</h2>
+      <p class="ds-section__subtitle">Informativo, não clicável. Dot colorido + rótulo semântico.</p>
+      <div class="ds-component-preview">
+        <span class="kds-chip kds-chip--status kds-chip--status-success">
+          <span class="kds-chip__dot"></span>Aprovado
+        </span>
+        <span class="kds-chip kds-chip--status kds-chip--status-error">
+          <span class="kds-chip__dot"></span>Reprovado
+        </span>
+        <span class="kds-chip kds-chip--status kds-chip--status-warning">
+          <span class="kds-chip__dot"></span>Pendente
+        </span>
+        <span class="kds-chip kds-chip--status kds-chip--status-info">
+          <span class="kds-chip__dot"></span>Em análise
+        </span>
+        <span class="kds-chip kds-chip--status kds-chip--status-neutral">
+          <span class="kds-chip__dot"></span>Inativo
+        </span>
+      </div>
+      <table class="ds-table">
+        <thead><tr><th>Sentiment</th><th>Fundo</th><th>Dot / Texto</th><th>Rótulo padrão</th></tr></thead>
+        <tbody>
+          <tr><td>Success</td><td><code>--sys-success-bg</code> #DDFBE7</td><td><code>--sys-success</code> #1EA853</td><td>Aprovado</td></tr>
+          <tr><td>Error</td><td><code>--sys-error-bg</code> #FFF1F1</td><td><code>--sys-error</code> #FF6060</td><td>Reprovado</td></tr>
+          <tr><td>Warning</td><td><code>--sys-warning-bg</code> #FEF9EC</td><td><code>--sys-warning</code> #F3A42E</td><td>Pendente</td></tr>
+          <tr><td>Info</td><td><code>--color-primary-bg</code> #F0F6F5</td><td><code>--color-primary</code> #0A9F82</td><td>Em análise</td></tr>
+          <tr><td>Neutral</td><td><code>--color-card-bg</code> #F0F0F0</td><td><code>--bg-500</code> #5E6772</td><td>Inativo</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── Chip/Filter ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Chip/Filter</h2>
+      <p class="ds-section__subtitle">Toggle de seleção em listas. Alterna entre deselected e selected.</p>
+      <div class="ds-component-preview">
+        <span class="kds-chip kds-chip--filter-default">Prazo</span>
+        <span class="kds-chip kds-chip--filter-hover">Prazo</span>
+        <span class="kds-chip kds-chip--filter-selected">
+          <span class="kds-chip__icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Prazo
+        </span>
+        <span class="kds-chip kds-chip--filter-selected-hover">
+          <span class="kds-chip__icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Prazo
+        </span>
+        <span class="kds-chip kds-chip--filter-disabled">Prazo</span>
+        <span class="kds-chip kds-chip--filter-loading">Carregando...</span>
+      </div>
+      <table class="ds-table">
+        <thead><tr><th>State</th><th>Visual</th></tr></thead>
+        <tbody>
+          <tr><td>Default</td><td>Fundo #E8E8E8 · borda #5E6772 · texto #5E6772</td></tr>
+          <tr><td>Hover</td><td>Fundo primaryBg · borda primary · texto primary</td></tr>
+          <tr><td>Selected</td><td>Fundo primary · ícone check branco · texto branco</td></tr>
+          <tr><td>Selected-Hover</td><td>Fundo primaryDark (#04513F) · check + texto branco</td></tr>
+          <tr><td>Disabled</td><td>Fundo branco · borda #BDBDBD · opacity 50%</td></tr>
+          <tr><td>Loading</td><td>Fundo #F0F0F0 · texto "Carregando..." · opacity 70%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── Chip/Suggestion ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Chip/Suggestion</h2>
+      <p class="ds-section__subtitle">Ação rápida sem estado persistente. Suporta ícone antes ou depois do rótulo.</p>
+      <div class="ds-component-preview">
+        <span class="kds-chip kds-chip--suggestion-default">Simular agora</span>
+        <span class="kds-chip kds-chip--suggestion-hover">Simular agora</span>
+        <span class="kds-chip kds-chip--suggestion-pressed">Simular agora</span>
+        <span class="kds-chip kds-chip--suggestion-disabled">Simular agora</span>
+        <span class="kds-chip kds-chip--suggestion-icon">
+          <span class="kds-chip__icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Simular
+        </span>
+        <span class="kds-chip kds-chip--suggestion-icon">
+          Simular<span class="kds-chip__icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </span>
+      </div>
+      <table class="ds-table">
+        <thead><tr><th>State / Icon</th><th>Visual</th></tr></thead>
+        <tbody>
+          <tr><td>Default / None</td><td>Fundo #E8E8E8 · borda #5E6772 · texto #5E6772</td></tr>
+          <tr><td>Hover / None</td><td>Fundo primaryBg · borda primary · texto primary</td></tr>
+          <tr><td>Pressed / None</td><td>Fundo primary · texto branco</td></tr>
+          <tr><td>Disabled / None</td><td>Fundo branco · borda #BDBDBD · opacity 50%</td></tr>
+          <tr><td>Default / Before</td><td>Fundo branco · borda #CECFCD · ícone + texto dark</td></tr>
+          <tr><td>Default / After</td><td>Fundo branco · borda #CECFCD · texto + ícone dark</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── Chip/Input ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Chip/Input</h2>
+      <p class="ds-section__subtitle">Tag criada pelo usuário — sempre removível via ícone ✕. Usado em campos de seleção múltipla.</p>
+      <div class="ds-component-preview">
+        <span class="kds-chip kds-chip--input-default">
+          São Paulo
+          <span class="kds-chip__icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </span>
+        <span class="kds-chip kds-chip--input-hover">
+          São Paulo
+          <span class="kds-chip__icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </span>
+        <span class="kds-chip kds-chip--input-focused">
+          São Paulo
+          <span class="kds-chip__icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </span>
+        <span class="kds-chip kds-chip--input-disabled">
+          São Paulo
+          <span class="kds-chip__icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </span>
+        <span class="kds-chip kds-chip--input-error">
+          Inválido
+          <span class="kds-chip__icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </span>
+      </div>
+      <table class="ds-table">
+        <thead><tr><th>State</th><th>Visual</th></tr></thead>
+        <tbody>
+          <tr><td>Default</td><td>Fundo #F0F0F0 · texto dark · check cinza</td></tr>
+          <tr><td>Hover</td><td>Fundo primaryBg · texto primary · check primary</td></tr>
+          <tr><td>Focused</td><td>Fundo branco · borda 2px primary · texto primary</td></tr>
+          <tr><td>Disabled</td><td>Fundo #F0F0F0 · texto #BDBDBD · opacity 50%</td></tr>
+          <tr><td>Error</td><td>Fundo #FFF1F1 · borda 1.5px #FF6060 · texto #FF6060 · ícone ✕</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── Chip/Size ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Chip/Size</h2>
+      <p class="ds-section__subtitle">SM para listas densas · MD padrão · LG destaque ou CTA.</p>
+      <div class="ds-component-preview" style="align-items:center">
+        <span class="kds-chip kds-chip--primary kds-chip--sm kds-chip--pill">Pequeno</span>
+        <span class="kds-chip kds-chip--primary kds-chip--md kds-chip--pill">Médio</span>
+        <span class="kds-chip kds-chip--primary kds-chip--lg kds-chip--pill">Grande</span>
+      </div>
+      <table class="ds-table">
+        <thead><tr><th>Size</th><th>Altura</th><th>Font-size</th><th>Font-weight</th></tr></thead>
+        <tbody>
+          <tr><td>SM</td><td>24px</td><td>10px</td><td>Medium 500</td></tr>
+          <tr><td>MD</td><td>32px</td><td>12px</td><td>Medium 500</td></tr>
+          <tr><td>LG</td><td>40px</td><td>14px</td><td>SemiBold 600</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── Chip/Radius ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Chip/Radius</h2>
+      <p class="ds-section__subtitle">Pill é o padrão da interface. Rounded e Square para contextos específicos.</p>
+      <div class="ds-component-preview" style="align-items:center">
+        <span class="kds-chip kds-chip--primary kds-chip--md kds-chip--pill">Pill Chip</span>
+        <span class="kds-chip kds-chip--primary kds-chip--md kds-chip--rounded">Rounded Chip</span>
+        <span class="kds-chip kds-chip--primary kds-chip--md kds-chip--square">Square Chip</span>
+      </div>
+      <table class="ds-table">
+        <thead><tr><th>Shape</th><th>Border-radius</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td>Pill</td><td>100px</td><td>Padrão — todos os chips interativos</td></tr>
+          <tr><td>Rounded</td><td>8px</td><td>Contextos com layout mais quadrado</td></tr>
+          <tr><td>Square</td><td>4px</td><td>Tabelas ou grids com pouco espaço</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── Equivalência M3 ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Equivalência Material Design 3</h2>
+      <p class="ds-section__subtitle">M3 define 4 tipos de chip. O Konsi DS os implementa com nomes adaptados ao contexto do produto.</p>
+      <table class="ds-table">
+        <thead><tr><th>M3</th><th>Konsi DS</th><th>Descrição</th></tr></thead>
+        <tbody>
+          <tr><td>Assist chip</td><td><code>Chip/Suggestion</code></td><td>Ação inteligente/sugerida. No Konsi, usado para "Simular", "Aplicar", etc.</td></tr>
+          <tr><td>Filter chip</td><td><code>Chip/Filter</code></td><td>Toggle de seleção para filtrar listas. Múltiplos podem ser selecionados.</td></tr>
+          <tr><td>Input chip</td><td><code>Chip/Input</code></td><td>Representa dado inserido pelo usuário. Sempre removível via ✕.</td></tr>
+          <tr><td>Suggestion chip</td><td><code>Chip/Suggestion</code></td><td>Sugestões dinâmicas geradas por contexto (ex: ML, histórico).</td></tr>
+          <tr><td>—</td><td><code>Chip/Status</code></td><td>Extensão Konsi. Informativo, não clicável. Sem equivalente direto no M3.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── Quando Usar ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Quando Usar</h2>
+      <p class="ds-section__subtitle">Chips são elementos secundários. Prefira botões para ações primárias e checkboxes para seleção em formulários.</p>
+
+      <div class="ds-dodont">
+        <div class="ds-dodont__card ds-dodont__card--do">
+          <div class="ds-dodont__header">✅ Use chips quando…</div>
+          <div class="ds-dodont__body">
+            <ul style="margin:0;padding-left:1.2em;line-height:1.8;font-size:0.875rem">
+              <li>Há <strong>3 ou mais opções de filtro</strong> (≤2 opções → use checkboxes)</li>
+              <li>O usuário precisa <strong>adicionar/remover tags</strong> livremente (Chip/Input)</li>
+              <li>A ação é <strong>contextual e secundária</strong> — "Simular", "Ordenar por prazo"</li>
+              <li>O estado selecionado precisa ser <strong>visualmente persistente</strong> (Filter)</li>
+              <li>Precisa indicar <strong>status de um objeto</strong> de forma compacta (Status)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ds-dodont__card ds-dodont__card--dont">
+          <div class="ds-dodont__header">❌ Evite chips quando…</div>
+          <div class="ds-dodont__body">
+            <ul style="margin:0;padding-left:1.2em;line-height:1.8;font-size:0.875rem">
+              <li>A ação é <strong>primária ou destrutiva</strong> — use Button</li>
+              <li>Serve como <strong>item de navegação</strong> — use Tab ou NavigationBar</li>
+              <li>Há <strong>apenas 1–2 opções</strong> — use Switch ou Checkbox</li>
+              <li>O texto do chip tem <strong>mais de 3–4 palavras</strong></li>
+              <li>Tipos diferentes de chip estão <strong>misturados no mesmo grupo</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-alert ds-alert--info" style="margin-top:var(--spacing-sm)">
+        <span style="flex-shrink:0">💡</span>
+        <div><strong>Chip vs Botão:</strong> Chips representam entidades (filtros, tags, estados). Botões disparam ações únicas e diretas. Se a label for um verbo de ação principal, use Button.</div>
+      </div>
+    </div>
+
+    <!-- ── Agrupamento & Layout ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Agrupamento &amp; Layout</h2>
+      <p class="ds-section__subtitle">Chips de mesmo tipo devem ser agrupados juntos. Grupos grandes ficam em scroll horizontal.</p>
+      <table class="ds-table">
+        <thead><tr><th>Regra</th><th>Detalhe</th></tr></thead>
+        <tbody>
+          <tr><td>Um tipo por grupo</td><td>Nunca misture Filter, Suggestion e Input no mesmo container</td></tr>
+          <tr><td>Overflow horizontal</td><td>Grupos com mais chips do que cabem na tela devem ter scroll horizontal (<code>SingleChildScrollView</code>)</td></tr>
+          <tr><td>Espaçamento entre chips</td><td>8dp entre chips no mesmo grupo</td></tr>
+          <tr><td>Sem quebra de linha</td><td>Chips não devem "quebrar" para a linha seguinte — use scroll</td></tr>
+          <tr><td>Filter: múltipla seleção</td><td>Vários filtros podem estar selecionados simultaneamente</td></tr>
+          <tr><td>Input: posição no campo</td><td>Chip/Input aparece dentro do campo de texto, antes do cursor</td></tr>
+        </tbody>
+      </table>
+
+      <div class="ds-component-preview" style="flex-direction:column;align-items:flex-start;gap:12px;margin-top:16px">
+        <p style="font-size:0.75rem;color:var(--color-subtitle-gray);margin:0">Exemplo — grupo de filtros com seleção múltipla:</p>
+        <div style="display:flex;gap:8px;flex-wrap:nowrap;overflow-x:auto;width:100%">
+          <span class="kds-chip kds-chip--filter-selected" style="flex-shrink:0">
+            <span class="kds-chip__icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Prazo
+          </span>
+          <span class="kds-chip kds-chip--filter-default" style="flex-shrink:0">Banco</span>
+          <span class="kds-chip kds-chip--filter-selected" style="flex-shrink:0">
+            <span class="kds-chip__icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>INSS
+          </span>
+          <span class="kds-chip kds-chip--filter-default" style="flex-shrink:0">Convênio</span>
+          <span class="kds-chip kds-chip--filter-default" style="flex-shrink:0">Taxa</span>
+          <span class="kds-chip kds-chip--filter-default" style="flex-shrink:0">Parcelas</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Acessibilidade ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Acessibilidade</h2>
+
+      <div class="ds-alert ds-alert--warning" style="margin-bottom:var(--spacing-sm)">
+        <span style="flex-shrink:0">⚠️</span>
+        <div><strong>Área de toque mínima: 48×48dp.</strong> O chip visual tem 32dp de altura, mas a área interativa deve ter pelo menos 48dp. Use padding ou <code>SizedBox</code> para garantir isso em Flutter.</div>
+      </div>
+
+      <table class="ds-table">
+        <thead><tr><th>Requisito</th><th>Implementação</th></tr></thead>
+        <tbody>
+          <tr><td>Toque mínimo</td><td>48×48dp — adicione padding vertical de 8dp ao container</td></tr>
+          <tr><td>Role semântico</td><td>Filter: <code>role="option"</code> + <code>aria-selected</code> · Outros: <code>role="button"</code></td></tr>
+          <tr><td>Grupo de chips</td><td>Envolva com <code>role="listbox"</code> (filter) ou <code>role="list"</code></td></tr>
+          <tr><td>Input chip — remover</td><td>O botão ✕ precisa de label acessível: <code>aria-label="Remover São Paulo"</code></td></tr>
+          <tr><td>Estado selecionado</td><td>Anuncie via <code>aria-selected="true"</code> / <code>aria-pressed="true"</code></td></tr>
+          <tr><td>Teclado</td><td><kbd>Tab</kbd> navega entre chips · <kbd>Space</kbd> ou <kbd>Enter</kbd> ativa</td></tr>
+          <tr><td>Foco visível</td><td>Focus ring com contraste mínimo 3:1 (WCAG 2.1 AA)</td></tr>
+          <tr><td>Loading chip</td><td>Adicione <code>aria-busy="true"</code> e <code>aria-label="Carregando"</code></td></tr>
+        </tbody>
+      </table>
+
+      <div class="ds-dodont" style="margin-top:var(--spacing-sm)">
+        <div class="ds-dodont__card ds-dodont__card--do">
+          <div class="ds-dodont__header">✅ Acessível</div>
+          <div class="ds-dodont__body" style="font-size:0.875rem;line-height:1.7">
+            <code style="display:block;background:var(--color-screen-bg);padding:8px;border-radius:6px;font-size:0.78rem;margin-bottom:8px">Semantics(
+  label: 'Filtrar por Prazo, selecionado',
+  selected: true,
+  child: FilterChip(...)
+)</code>
+            Label descreve o estado completo para leitores de tela.
+          </div>
+        </div>
+        <div class="ds-dodont__card ds-dodont__card--dont">
+          <div class="ds-dodont__header">❌ Inacessível</div>
+          <div class="ds-dodont__body" style="font-size:0.875rem;line-height:1.7">
+            <code style="display:block;background:var(--color-screen-bg);padding:8px;border-radius:6px;font-size:0.78rem;margin-bottom:8px">// sem Semantics
+FilterChip(
+  label: Text('Prazo'),
+  ...
+)</code>
+            O leitor de tela apenas lê "Prazo" — não anuncia se está selecionado.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Código Flutter ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Código Flutter</h2>
+      <div class="ds-code-block">
+        <span class="ds-code-block__lang">DART</span>
+        <span class="cmt">// Chip/Status — Aprovado</span><br>
+        Container(<br>
+        &nbsp;&nbsp;height: <span class="num">28</span>,<br>
+        &nbsp;&nbsp;padding: <span class="kw">const</span> EdgeInsets.symmetric(horizontal: <span class="num">12</span>),<br>
+        &nbsp;&nbsp;decoration: BoxDecoration(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;color: AppColors.sysSuccessBg,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;borderRadius: BorderRadius.circular(<span class="num">100</span>),<br>
+        &nbsp;&nbsp;),<br>
+        &nbsp;&nbsp;child: Row(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;mainAxisSize: MainAxisSize.min,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;children: [<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Container(width: <span class="num">8</span>, height: <span class="num">8</span>, decoration: BoxDecoration(color: AppColors.sysSuccess, shape: BoxShape.circle)),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">const</span> SizedBox(width: <span class="num">6</span>),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text(<span class="str">'Aprovado'</span>, style: AppTextStyles.labelMedium.copyWith(color: AppColors.sysSuccess)),<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;],<br>
+        &nbsp;&nbsp;),<br>
+        ),<br>
+        <br>
+        <span class="cmt">// Chip/Filter — Selected</span><br>
+        FilterChip(<br>
+        &nbsp;&nbsp;label: <span class="kw">const</span> Text(<span class="str">'Prazo'</span>),<br>
+        &nbsp;&nbsp;selected: isSelected,<br>
+        &nbsp;&nbsp;onSelected: (v) => setState(() => isSelected = v),<br>
+        &nbsp;&nbsp;selectedColor: AppColors.defaultGreen,<br>
+        &nbsp;&nbsp;backgroundColor: AppColors.cardAlt,<br>
+        &nbsp;&nbsp;labelStyle: TextStyle(color: isSelected ? Colors.white : AppColors.defaultGray2),<br>
+        &nbsp;&nbsp;shape: <span class="kw">const</span> StadiumBorder(),<br>
+        &nbsp;&nbsp;showCheckmark: <span class="kw">true</span>,<br>
+        &nbsp;&nbsp;checkmarkColor: Colors.white,<br>
+        ),
+      </div>
+    </div>
+
+    <!-- ── Availability & Resources ── -->
+    <div class="ds-section">
+      <h2 class="ds-section__title">Availability &amp; Resources</h2>
+      <p class="ds-section__subtitle">Status de implementação por plataforma e links para os arquivos de design.</p>
+
+      <table class="ds-table" style="margin-bottom:var(--spacing-md)">
+        <thead><tr><th>Plataforma</th><th>Status</th><th>Componente</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>
+              <span style="display:flex;align-items:center;gap:8px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12.3 2L2 7.5v9L12 22l10-5.5v-9L12.3 2z" fill="#54C5F8"/><path d="M12 22v-9.5L2 7.5" stroke="#01579B" stroke-width="1.5"/><path d="M22 7.5l-10 5" stroke="#01579B" stroke-width="1.5"/></svg>
+                Flutter
+              </span>
+            </td>
+            <td><span class="kds-chip kds-chip--status kds-chip--status-success" style="font-size:0.75rem"><span class="kds-chip__dot"></span>Disponível</span></td>
+            <td><code>FilterChip · InputChip · ActionChip · ChoiceChip</code></td>
+          </tr>
+          <tr>
+            <td>
+              <span style="display:flex;align-items:center;gap:8px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#3DDC84"/><path d="M6 17l3-5.2L6 7h2.4l1.8 3.1L12 7h2.4l-3 4.8 3 5.2H12l-1.8-3.2L8.4 17H6z" fill="white"/></svg>
+                Android
+              </span>
+            </td>
+            <td><span class="kds-chip kds-chip--status kds-chip--status-success" style="font-size:0.75rem"><span class="kds-chip__dot"></span>Disponível</span></td>
+            <td><code>Material3 Chip (via Flutter ou XML)</code></td>
+          </tr>
+          <tr>
+            <td>
+              <span style="display:flex;align-items:center;gap:8px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#555"/><path d="M12 5a7 7 0 1 0 0 14A7 7 0 0 0 12 5zm0 2a5 5 0 1 1 0 10A5 5 0 0 1 12 7z" fill="white"/><circle cx="12" cy="9" r="1.5" fill="white"/></svg>
+                iOS
+              </span>
+            </td>
+            <td><span class="kds-chip kds-chip--status kds-chip--status-warning" style="font-size:0.75rem"><span class="kds-chip__dot"></span>Parcial</span></td>
+            <td><code>via Flutter — sem equivalente nativo UIKit</code></td>
+          </tr>
+          <tr>
+            <td>
+              <span style="display:flex;align-items:center;gap:8px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#4285F4" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z" stroke="#4285F4" stroke-width="2"/></svg>
+                Web
+              </span>
+            </td>
+            <td><span class="kds-chip kds-chip--status kds-chip--status-info" style="font-size:0.75rem"><span class="kds-chip__dot"></span>Em análise</span></td>
+            <td><code>Flutter Web — avaliando componente nativo HTML</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="ds-resource-grid">
+        <a class="ds-resource-card" href="https://www.figma.com/design/dgIacIvjWtNgIB6mmhoRbN/%F0%9F%92%9C-DK---Aplicativo?node-id=55641-18" target="_blank" rel="noopener" style="text-decoration:none">
+          <div class="ds-resource-card__icon">
+            <svg width="22" height="22" viewBox="0 0 38 57" fill="none"><path d="M19 28.5A9.5 9.5 0 1 1 28.5 19 9.5 9.5 0 0 1 19 28.5z" fill="#1ABCFE"/><path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 0 1-19 0z" fill="#0ACF83"/><path d="M19 0v19h9.5a9.5 9.5 0 0 0 0-19z" fill="#FF7262"/><path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E"/><path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#FF7262"/></svg>
+          </div>
+          <div class="ds-resource-card__title">Figma — DK Aplicativo</div>
+          <div class="ds-resource-card__desc">Arquivo fonte com todos os 6 component sets e 28 variantes. Node: Chip — Component Sets.</div>
+          <span class="ds-resource-card__tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Abrir no Figma
+          </span>
+        </a>
+
+        <a class="ds-resource-card" href="https://m3.material.io/components/chips/overview" target="_blank" rel="noopener" style="text-decoration:none">
+          <div class="ds-resource-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#0A9F82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="ds-resource-card__title">Material Design 3 — Chips</div>
+          <div class="ds-resource-card__desc">Documentação oficial M3 com specs, guidelines, acessibilidade e comportamento dos 4 tipos de chip.</div>
+          <span class="ds-resource-card__tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Abrir m3.material.io
+          </span>
+        </a>
+
+        <a class="ds-resource-card" href="https://api.flutter.dev/flutter/material/Chip-class.html" target="_blank" rel="noopener" style="text-decoration:none">
+          <div class="ds-resource-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12.3 2L2 7.5v9L12 22l10-5.5v-9L12.3 2z" fill="#54C5F8"/></svg>
+          </div>
+          <div class="ds-resource-card__title">Flutter Docs — Chip</div>
+          <div class="ds-resource-card__desc">Referência da API Flutter para <code>FilterChip</code>, <code>InputChip</code>, <code>ActionChip</code> e <code>ChoiceChip</code>.</div>
+          <span class="ds-resource-card__tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Abrir api.flutter.dev
+          </span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -2279,5 +2707,11 @@
     #menu-toggle { display: block !important; }
   }
 </style>
+
+<aside class="ds-toc" id="ds-toc">
+  <p class="ds-toc__title">Nesta página</p>
+  <ul class="ds-toc__list" id="ds-toc-list"></ul>
+</aside>
+
 </body>
 </html>
