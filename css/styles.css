@@ -1107,43 +1107,57 @@ body {
 }
 
 /* ══════════════════════════════════════════
-   TOAST
+   SNACKBAR
 ══════════════════════════════════════════ */
-.kds-toast {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 14px var(--spacing-sm);
-  border-radius: 10px;
+.kds-snackbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.30);
+  width: 344px;
+  max-width: 100%;
+  background: var(--color-selected-card-bg);
   font-size: 0.875rem;
-  line-height: 1.4;
-  max-width: 360px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  font-weight: 500;
+  line-height: 1.43;
+  letter-spacing: 0.1px;
+  color: var(--color-dark-gray);
 }
 
-.kds-toast--success {
-  background: var(--sys-success-bg);
-  border-left: 4px solid var(--sys-success);
-  color: var(--sys-success-2);
+.kds-snackbar--error   { background: var(--sys-error-bg); }
+.kds-snackbar--success { background: var(--sys-success-bg); }
+
+.kds-snackbar__icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.kds-toast--error {
-  background: var(--sys-error-bg);
-  border-left: 4px solid var(--sys-error);
-  color: var(--sys-error-2);
+.kds-snackbar__text { flex: 1; }
+
+.kds-snackbar__action {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 100px;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  color: var(--color-primary);
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1.43;
 }
 
-.kds-toast--warning {
-  background: var(--sys-warning-bg);
-  border-left: 4px solid var(--sys-warning);
-  color: var(--sys-warning-2);
-}
-
-.kds-toast--info {
-  background: var(--color-primary-bg);
-  border-left: 4px solid var(--color-primary);
-  color: var(--color-primary-dark);
-}
+.kds-snackbar__action--error { color: var(--sys-error); }
 
 /* ══════════════════════════════════════════
    HOME PAGE CARDS
