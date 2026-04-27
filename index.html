@@ -14,20 +14,29 @@
      HEADER
 ═══════════════════════════════════════════ -->
 <header class="ds-header">
-  <button id="menu-toggle" style="display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:4px 8px;" aria-label="Menu">☰</button>
-  <a class="ds-header__logo" href="#" data-goto="home">
-    <img class="ds-header__logo-icon" src="assets/brand/icon/konsi-icon-green-dark.svg" alt="Konsi" />
-    <span>Konsi DS</span>
-  </a>
-  <div class="ds-header__divider"></div>
-  <span class="ds-header__title">Design System</span>
-  <div class="ds-header__spacer"></div>
-  <div class="ds-header__search" id="ds-search-box">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input class="ds-header__search-input" type="text" placeholder="Buscar…" autocomplete="off" spellcheck="false" />
-    <div class="ds-search-results" id="ds-search-results" hidden></div>
+  <div class="ds-header__top">
+    <button id="menu-toggle" style="display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:4px 8px;" aria-label="Menu">☰</button>
+    <a class="ds-header__logo" href="#" data-goto="home">
+      <img class="ds-header__logo-icon" src="assets/brand/icon/konsi-icon-green-dark.svg" alt="Konsi" />
+      <span>Konsi DS</span>
+    </a>
+    <div class="ds-header__divider"></div>
+    <span class="ds-header__title">Design System</span>
+    <div class="ds-header__spacer"></div>
+    <div class="ds-header__search" id="ds-search-box">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input class="ds-header__search-input" type="text" placeholder="Buscar…" autocomplete="off" spellcheck="false" />
+      <div class="ds-search-results" id="ds-search-results" hidden></div>
+    </div>
+    <span class="ds-header__version">v1.0 · Flutter</span>
   </div>
-  <span class="ds-header__version">v1.0 · Flutter</span>
+  <div class="ds-header__bottom">
+    <div class="ds-product-tabs">
+      <span class="ds-product-tab active" data-product="aplicativo">Aplicativo</span>
+      <span class="ds-product-tab" data-product="marca">Marca</span>
+      <span class="ds-product-tab" data-product="konsigleds">Konsigleads</span>
+    </div>
+  </div>
 </header>
 
 <!-- ═══════════════════════════════════════════
@@ -51,7 +60,7 @@
 
   <nav>
     <!-- HOME -->
-    <div class="ds-nav__group" data-section="home">
+    <div class="ds-nav__group" data-section="home" data-product="aplicativo">
       <a class="ds-nav__item active" data-page="home">
         <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         Início
@@ -59,7 +68,7 @@
     </div>
 
     <!-- FUNDAMENTOS -->
-    <div class="ds-nav__group" data-section="fundamentos">
+    <div class="ds-nav__group" data-section="fundamentos" data-product="aplicativo">
       <span class="ds-nav__group-label">Fundamentos</span>
       <a class="ds-nav__item" data-page="cores">
         <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 20a7 7 0 1 1 0-14"/></svg>
@@ -85,7 +94,7 @@
     </div>
 
     <!-- COMPONENTES -->
-    <div class="ds-nav__group" data-section="componentes">
+    <div class="ds-nav__group" data-section="componentes" data-product="aplicativo">
       <span class="ds-nav__group-label">Componentes</span>
       <a class="ds-nav__item" data-page="comp-botoes">
         <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="5"/></svg>
@@ -110,20 +119,8 @@
     </div>
 
     <!-- PADRÕES -->
-    <div class="ds-nav__group" data-section="componentes">
-      <span class="ds-nav__group-label">Padrões</span>
-      <a class="ds-nav__item" data-page="acessibilidade">
-        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-        Acessibilidade
-      </a>
-      <a class="ds-nav__item" data-page="principios">
-        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        Princípios
-      </a>
-    </div>
-
     <!-- BRAND -->
-    <div class="ds-nav__group" data-section="brand">
+    <div class="ds-nav__group" data-section="brand" data-product="marca">
       <span class="ds-nav__group-label">Brand</span>
       <a class="ds-nav__item" data-page="brand-identidade">
         <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
@@ -139,8 +136,20 @@
       </a>
     </div>
 
+    <div class="ds-nav__group" data-section="padroes" data-product="marca">
+      <span class="ds-nav__group-label">Padrões</span>
+      <a class="ds-nav__item" data-page="acessibilidade">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        Acessibilidade
+      </a>
+      <a class="ds-nav__item" data-page="principios">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Princípios
+      </a>
+    </div>
+
     <!-- CONTEÚDO -->
-    <div class="ds-nav__group" data-section="conteudo">
+    <div class="ds-nav__group" data-section="conteudo" data-product="marca">
       <span class="ds-nav__group-label">Conteúdo</span>
       <a class="ds-nav__item" data-page="conteudo-escrita">
         <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
@@ -153,7 +162,7 @@
     </div>
 
     <!-- RECURSOS -->
-    <div class="ds-nav__group" data-section="recursos">
+    <div class="ds-nav__group" data-section="recursos" data-product="aplicativo">
       <span class="ds-nav__group-label">Recursos</span>
       <a class="ds-nav__item" data-page="recursos-figma">
         <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
@@ -164,6 +173,81 @@
         Flutter
       </a>
       <a class="ds-nav__item" data-page="recursos-contribuir">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        Como Contribuir
+      </a>
+    </div>
+
+    <!-- KONSIGLEDS — Início -->
+    <div class="ds-nav__group hidden" data-section="home" data-product="konsigleds">
+      <a class="ds-nav__item" data-page="glds-soon">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Início
+      </a>
+    </div>
+
+    <!-- KONSIGLEDS — Fundamentos -->
+    <div class="ds-nav__group hidden" data-section="fundamentos" data-product="konsigleds">
+      <span class="ds-nav__group-label">Fundamentos</span>
+      <a class="ds-nav__item" data-page="glds-soon">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 20a7 7 0 1 1 0-14"/></svg>
+        Cores
+      </a>
+      <a class="ds-nav__item" data-page="glds-soon">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+        Tipografia
+      </a>
+      <a class="ds-nav__item" data-page="glds-soon">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="3" y2="18"/></svg>
+        Espaçamento
+      </a>
+      <a class="ds-nav__item" data-page="glds-soon">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        Elevação &amp; Sombras
+      </a>
+      <a class="ds-nav__item" data-page="glds-soon">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        Design Tokens
+      </a>
+    </div>
+
+    <!-- KONSIGLEDS — Componentes -->
+    <div class="ds-nav__group hidden" data-section="componentes" data-product="konsigleds">
+      <span class="ds-nav__group-label">Componentes</span>
+      <a class="ds-nav__item" data-page="glds-soon">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="5"/></svg>
+        Botões
+      </a>
+      <a class="ds-nav__item" data-page="glds-soon">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Inputs &amp; Formulários
+      </a>
+      <a class="ds-nav__item" data-page="glds-soon">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        Cards
+      </a>
+      <a class="ds-nav__item" data-page="glds-soon">
+        <span class="material-symbols-rounded ds-nav__item-icon">voting_chip</span>
+        Chips
+      </a>
+      <a class="ds-nav__item" data-page="glds-soon">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Feedback &amp; Alertas
+      </a>
+    </div>
+
+    <!-- KONSIGLEDS — Recursos -->
+    <div class="ds-nav__group hidden" data-section="recursos" data-product="konsigleds">
+      <span class="ds-nav__group-label">Recursos</span>
+      <a class="ds-nav__item" data-page="glds-soon">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        Figma
+      </a>
+      <a class="ds-nav__item" data-page="glds-soon">
+        <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        Flutter
+      </a>
+      <a class="ds-nav__item" data-page="glds-soon">
         <svg class="ds-nav__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
         Como Contribuir
       </a>
@@ -3014,6 +3098,15 @@ FilterChip(
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         <div>Prefira <strong>evoluir o que existe</strong> a criar do zero. Novos tokens e componentes aumentam a carga cognitiva do time. Antes de propor algo novo, verifique se o problema pode ser resolvido com o que já está no DS.</div>
       </div>
+    </div>
+  </section>
+
+  <!-- KONSIGLEDS — Em breve -->
+  <section id="page-glds-soon" class="ds-page">
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;gap:16px;text-align:center;">
+      <span class="material-symbols-rounded" style="font-size:56px;color:var(--color-primary);opacity:0.5;">construction</span>
+      <h2 style="font-size:1.5rem;font-weight:700;color:var(--color-dark-gray);margin:0;">Konsigleads em construção</h2>
+      <p style="color:var(--color-subtitle-gray);font-size:0.95rem;max-width:400px;margin:0;">Esta seção está sendo preparada. Em breve você encontrará aqui as diretrizes e componentes do Konsigleads.</p>
     </div>
   </section>
 
