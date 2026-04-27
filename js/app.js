@@ -19,8 +19,8 @@
     'comp-cards':          'componentes',
     'comp-badges':         'componentes',
     'comp-feedback':       'componentes',
-    'acessibilidade':      'componentes',
-    'principios':          'componentes',
+    'acessibilidade':      'padroes',
+    'principios':          'padroes',
     'brand-identidade':    'brand',
     'brand-paleta':        'brand',
     'brand-voz':           'brand',
@@ -29,7 +29,63 @@
     'recursos-figma':      'recursos',
     'recursos-flutter':    'recursos',
     'recursos-contribuir': 'recursos',
+    'glds-soon':           'home',
   };
+
+  // ── Product map: page → product tab ──────────────────────
+  const PAGE_PRODUCT = {
+    'home':                'aplicativo',
+    'cores':               'aplicativo',
+    'tipografia':          'aplicativo',
+    'espacamento':         'aplicativo',
+    'elevacao':            'aplicativo',
+    'tokens':              'aplicativo',
+    'comp-botoes':         'aplicativo',
+    'comp-inputs':         'aplicativo',
+    'comp-cards':          'aplicativo',
+    'comp-badges':         'aplicativo',
+    'comp-feedback':       'aplicativo',
+    'acessibilidade':      'marca',
+    'principios':          'marca',
+    'brand-identidade':    'marca',
+    'brand-paleta':        'marca',
+    'brand-voz':           'marca',
+    'conteudo-escrita':    'marca',
+    'conteudo-microcopy':  'marca',
+    'recursos-figma':      'aplicativo',
+    'recursos-flutter':    'aplicativo',
+    'recursos-contribuir': 'aplicativo',
+    'glds-soon':           'konsigleds',
+  };
+
+  let activeProduct = 'aplicativo';
+
+  function activateProduct(productId) {
+    activeProduct = productId;
+    document.querySelectorAll('.ds-product-tab').forEach(tab => {
+      tab.classList.toggle('active', tab.dataset.product === productId);
+    });
+    document.querySelectorAll('.ds-nav__group[data-product]').forEach(group => {
+      group.classList.toggle('hidden', group.dataset.product !== productId);
+    });
+    const hideSidebar = productId === 'konsigleds';
+    document.querySelector('.ds-sidebar').classList.toggle('ds-sidebar--hidden', hideSidebar);
+    document.querySelector('.ds-main').classList.toggle('ds-main--no-sidebar', hideSidebar);
+  }
+
+  const PRODUCT_HOME = {
+    'marca':       'brand-identidade',
+    'aplicativo':  'home',
+    'konsigleds':  'glds-soon',
+  };
+
+  document.querySelectorAll('.ds-product-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      activateProduct(tab.dataset.product);
+      const page = PRODUCT_HOME[tab.dataset.product] || Object.keys(PAGE_PRODUCT).find(k => PAGE_PRODUCT[k] === tab.dataset.product);
+      if (page) navigate(page);
+    });
+  });
 
   // ── Navigate to a page ──────────────────────────────────
   function navigate(pageId) {
@@ -42,6 +98,10 @@
 
     if (page) page.classList.add('active');
     if (nav)  nav.classList.add('active');
+
+    // Sync product tab
+    const product = PAGE_PRODUCT[pageId] || 'aplicativo';
+    if (product !== activeProduct) activateProduct(product);
 
     // Update top-nav active state
     const section = PAGE_SECTION[pageId] || 'home';
@@ -119,9 +179,9 @@
       item.classList.toggle('active', item.dataset.section === sectionId);
     });
 
-    // Keep all sidebar groups always visible
-    document.querySelectorAll('.ds-nav__group[data-section]').forEach(group => {
-      group.classList.remove('hidden');
+    // Show only sidebar groups for the active product
+    document.querySelectorAll('.ds-nav__group[data-product]').forEach(group => {
+      group.classList.toggle('hidden', group.dataset.product !== activeProduct);
     });
 
     // Navigate to the first page of section if requested
@@ -156,6 +216,8 @@
 
   // ── Initial page from hash ───────────────────────────────
   const initial = window.location.hash.replace('#', '') || 'home';
+  const initialProduct = PAGE_PRODUCT[initial] || 'aplicativo';
+  activateProduct(initialProduct);
   navigate(initial);
 
   // ── Copy hex on click ────────────────────────────────────
@@ -207,7 +269,7 @@
   if (searchInput && searchResults) {
     const SECTION_LABEL = {
       home: 'Início', fundamentos: 'Fundamentos', componentes: 'Componentes',
-      brand: 'Brand', conteudo: 'Conteúdo', recursos: 'Recursos',
+      padroes: 'Padrões', brand: 'Brand', conteudo: 'Conteúdo', recursos: 'Recursos',
     };
 
     const index = [...document.querySelectorAll('.ds-nav__item[data-page]')]
